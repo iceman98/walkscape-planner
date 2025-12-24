@@ -1,0 +1,20 @@
+{
+    "recipes": [
+        {
+            "name": "Create a Birch Plank (Scrap)",
+            "requirements": {
+                "profession": {
+                    "name": "Carpentry",
+                    "level": 1
+                },
+                "materials": [
+                    {
+                        "name": "Wood Scrap",
+                        "amount": 5
+                    }
+                ],
+                "service": "Basic Sawmill"
+            }
+        }
+    ]
+}

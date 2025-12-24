@@ -1,2 +1,20 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+    import { browser } from "$app/environment";
+    import Stage from "svelte-konva/Stage.svelte";
+    import Layer from "svelte-konva/Layer.svelte";
+    import Rect from "svelte-konva/Rect.svelte";
+    import Text from "svelte-konva/Text.svelte";
+	import data from '../data/recipes.json';
+  import character from '../data/character.json';
+
+</script>
+
+{#if browser}
+<Stage width={window.innerWidth} height={window.innerHeight}>
+  <Layer>
+    {#each data.recipes as recipe}
+        <Text text={recipe.name} x={100} y={100} />
+    {/each}
+  </Layer>
+</Stage>
+{/if}
