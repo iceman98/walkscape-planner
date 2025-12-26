@@ -135,6 +135,33 @@
     ).join(' ');
   }
 
+  // Function to convert recipe name to inventory snake_case format
+  function recipeNameToInventoryName(recipeName: string): string {
+    return recipeName.toLowerCase().replace(/\s+/g, '_');
+  }
+
+  // Calculate how many times a recipe can be crafted
+  function calculateCraftingTimes(recipe: any, inventory: Record<string, { normal: number; fine: number }>) {
+    const normalTimes = Math.min(...recipe.requirements.materials.map((material: any) => {
+      const inventoryName = recipeNameToInventoryName(material.name);
+      const available = inventory[inventoryName] || { normal: 0, fine: 0 };
+      return Math.floor(available.normal / material.amount);
+    }));
+    
+    const fineTimes = Math.min(...recipe.requirements.materials.map((material: any) => {
+      const inventoryName = recipeNameToInventoryName(material.name);
+      const available = inventory[inventoryName] || { normal: 0, fine: 0 };
+      return Math.floor(available.fine / material.amount);
+    }));
+    
+    return {
+      normal: normalTimes || 0,
+      fine: fineTimes || 0,
+      canCraftNormal: normalTimes > 0,
+      canCraftFine: fineTimes > 0
+    };
+  }
+
   // Get inventory items as array (including bank)
   $: inventoryItems = (() => {
     const allItems: Record<string, { normal: number; fine: number }> = {};
@@ -193,6 +220,26 @@
       };
     });
   })();
+
+  // Calculate crafting times for all recipes
+  $: recipesWithCraftingInfo = sortedGroupedRecipes && Object.keys(sortedGroupedRecipes).reduce((acc: Record<string, any[]>, profession) => {
+    acc[profession] = sortedGroupedRecipes[profession].map((recipe: any) => {
+      const inventoryMap = inventoryItems.reduce((map: Record<string, { normal: number; fine: number }>, item) => {
+        const snakeCaseName = recipeNameToInventoryName(item.name);
+        map[snakeCaseName] = { normal: item.normalQuantity, fine: item.fineQuantity };
+        return map;
+      }, {});
+      
+      const craftingTimes = calculateCraftingTimes(recipe, inventoryMap);
+      
+      return {
+        ...recipe,
+        craftingTimes,
+        canCraft: craftingTimes.normal > 0 || craftingTimes.fine > 0
+      };
+    });
+    return acc;
+  }, {});
 
   function handleWheel(e: { evt: WheelEvent }) {
     if (!stageRef) return;
@@ -341,7 +388,7 @@
         y={stageOffset.y}
       >
     <Layer>
-      {#each Object.entries(sortedGroupedRecipes) as [profession, professionRecipes]}
+      {#each Object.entries(recipesWithCraftingInfo) as [profession, professionRecipes]}
         <Group x={10} y={professionPositions[profession]}>
           <!-- Profession header -->
           <Rect x={0} y={0} width={300} height={50} fill="darkblue" />
@@ -365,8 +412,16 @@
           {#each professionRecipes as recipe, recipeIndex}
             {@const recipeY = 60 + recipeIndex * 80}
             <Group x={0} y={recipeY}>
-              <!-- Recipe card background -->
-              <Rect x={0} y={0} width={400} height={70} fill="lightgrey" stroke="black" strokeWidth={1} />
+              <!-- Recipe card background with green border if craftable -->
+              <Rect 
+                x={0} 
+                y={0} 
+                width={400} 
+                height={70} 
+                fill="lightgrey" 
+                stroke={recipe.canCraft ? "#4CAF50" : "black"} 
+                strokeWidth={recipe.canCraft ? 3 : 1} 
+              />
               
               <!-- Recipe output icon -->
               {#if typedIcons.materials[recipe.output]}
@@ -387,8 +442,21 @@
                 <Text text={recipe.name} x={0} y={0} fontSize={12} fontWeight="bold" />
                 <Text text={`Output: ${recipe.output}`} x={0} y={15} fontSize={10} />
                 
-                <!-- Materials -->
+                <!-- Crafting times -->
                 <Group x={0} y={30}>
+                  {#if recipe.craftingTimes.normal > 0}
+                    <Text text={`Normal: x${recipe.craftingTimes.normal}`} x={0} y={0} fontSize={9} fill="#4CAF50" />
+                  {/if}
+                  {#if recipe.craftingTimes.fine > 0}
+                    <Text text={`Fine: x${recipe.craftingTimes.fine}`} x={80} y={0} fontSize={9} fill="#2196F3" />
+                  {/if}
+                  {#if recipe.craftingTimes.normal === 0 && recipe.craftingTimes.fine === 0}
+                    <Text text="No materials" x={0} y={0} fontSize={9} fill="#F44336" />
+                  {/if}
+                </Group>
+                
+                <!-- Materials -->
+                <Group x={0} y={45}>
                   <Text text="Materials:" x={0} y={0} fontSize={10} fontWeight="bold" />
                   {#each recipe.requirements.materials as material, matIndex}
                     {@const matX = matIndex * 80}
