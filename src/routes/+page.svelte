@@ -107,14 +107,17 @@
     return acc;
   }, {});
 
-  // Calculate Y positions for each profession to avoid overlap
-  $: professionPositions = Object.keys(sortedGroupedRecipes).reduce((acc: Record<string, number>, profession, index) => {
-    let yOffset = 0;
-    for (let i = 0; i < index; i++) {
-      const prevProfession = Object.keys(sortedGroupedRecipes)[i];
-      yOffset += 60 + (sortedGroupedRecipes[prevProfession].length * 80) + 20; // header height + recipes height + spacing
-    }
-    acc[profession] = yOffset;
+  // Calculate X positions for each profession in columns
+  $: professionPositions = Object.keys(sortedGroupedRecipes).reduce((acc: Record<string, {x: number, y: number}>, profession, index) => {
+    const columns = 5; // Number of columns
+    const columnWidth = 420; // Width per column including spacing
+    const column = index % columns;
+    const row = Math.floor(index / columns);
+    
+    acc[profession] = {
+      x: 10 + column * columnWidth,
+      y: row * 600 // Start new row after 3 professions
+    };
     return acc;
   }, {});
 
@@ -439,9 +442,9 @@
       >
     <Layer>
       {#each Object.entries(recipesWithCraftingInfo) as [profession, professionRecipes]}
-        <Group x={10} y={professionPositions[profession]}>
+        <Group x={professionPositions[profession]?.x || 0} y={professionPositions[profession]?.y || 0}>
           <!-- Profession header -->
-          <Rect x={0} y={0} width={300} height={50} fill="darkblue" />
+          <Rect x={0} y={0} width={280} height={50} fill="darkblue" />
           <Text text={profession} x={10} y={15} color="white" fontSize={18} />
           
           <!-- Profession icon -->
@@ -466,7 +469,7 @@
               <Rect 
                 x={0} 
                 y={0} 
-                width={400} 
+                width={380} 
                 height={110} 
                 fill="lightgrey" 
                 stroke={recipe.canCraft ? "#4CAF50" : "black"} 
