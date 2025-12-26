@@ -545,22 +545,25 @@
       {#each Object.entries(recipesWithCraftingInfo) as [profession, professionRecipes]}
         <Group x={professionPositions[profession]?.x || 0} y={professionPositions[profession]?.y || 0}>
           <!-- Profession header -->
-          <Rect x={0} y={0} width={280} height={50} fill="darkblue" />
-          <Text text={profession} x={10} y={15} color="white" fontSize={18} />
+          <Rect x={0} y={0} width={280} height={50} fill="lightblue" />
           
-          <!-- Profession icon -->
-          {#if typedIcons.professions[profession]}
+          <!-- Profession icon or placeholder -->
+          {#if typedIcons.professions[profession] && loadedImages[typedIcons.professions[profession]]}
             {@const professionIcon = loadedImages[typedIcons.professions[profession]]}
-            {#if professionIcon}
-              <Image
-                image={professionIcon}
-                x={250}
-                y={10}
-                width={30}
-                height={30}
-              />
-            {/if}
+            <Image
+              image={professionIcon}
+              x={10}
+              y={10}
+              width={30}
+              height={30}
+            />
+          {:else}
+            <!-- Placeholder circle when no icon is available -->
+            <Rect x={10} y={10} width={30} height={30} fill="#4a90e2" rx={5} />
+            <Text text={profession.charAt(0)} x={25} y={28} color="white" fontSize={16} textAnchor="middle" fontWeight="bold" />
           {/if}
+          
+          <Text text={profession} x={45} y={15} color="white" fontSize={18} />
           
           <!-- Recipes for this profession -->
           {#each professionRecipes as recipe, recipeIndex}

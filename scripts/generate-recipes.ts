@@ -75,6 +75,29 @@ function sanitizeFileName(name: string): string {
     .replace(/^_|_$/g, '');
 }
 
+function createBasicProfessionSVG(name: string): string {
+  const colors: Record<string, string> = {
+    'Smithing': '#FF6B35',
+    'Carpentry': '#8B4513',
+    'Cooking': '#FF8C00',
+    'Crafting': '#9370DB',
+    'Fishing': '#4682B4',
+    'Foraging': '#228B22',
+    'Mining': '#696969',
+    'Trinketry': '#FFD700',
+    'Woodcutting': '#654321',
+    'Agility': '#FF69B4'
+  };
+  
+  const color = colors[name] || '#666666';
+  const initial = name.charAt(0).toUpperCase();
+  
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+    <rect width="30" height="30" fill="${color}" rx="5"/>
+    <text x="15" y="20" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">${initial}</text>
+  </svg>`;
+}
+
 function saveSVGsToFile(svgs: ExtractedSVGs): void {
   const assetsDir = 'src/lib/assets';
   
@@ -108,6 +131,19 @@ function saveSVGsToFile(svgs: ExtractedSVGs): void {
     const filePath = join(professionsDir, `${fileName}.svg`);
     writeFileSync(filePath, svg, 'utf8');
     console.log(`Saved profession SVG: ${filePath}`);
+  });
+  
+  // Create basic SVGs for common professions if not found
+  const commonProfessions = ['Smithing', 'Carpentry', 'Cooking', 'Crafting', 'Fishing', 'Foraging', 'Mining', 'Trinketry', 'Woodcutting', 'Agility'];
+  commonProfessions.forEach(profession => {
+    if (!svgs.professions[profession]) {
+      const basicSVG = createBasicProfessionSVG(profession);
+      const fileName = sanitizeFileName(profession);
+      const filePath = join(professionsDir, `${fileName}.svg`);
+      writeFileSync(filePath, basicSVG, 'utf8');
+      console.log(`Created basic profession SVG: ${filePath}`);
+      svgs.professions[profession] = basicSVG;
+    }
   });
   
   // Save index file for easy importing
@@ -199,13 +235,31 @@ async function fetchRecipesFromWiki(): Promise<{ recipes: Recipe[], svgs: Extrac
       const levelMatch = levelText.match(/lvl (\d+)/);
       const level = levelMatch ? parseInt(levelMatch[1]) : 1;
       
-      // Extract profession SVG
+      // Extract profession SVG - try multiple approaches
       if (profession && profession !== '') {
-        const professionSVG = extractSVGFromElement(levelCell);
+        let professionSVG = extractSVGFromElement(levelCell);
+        
+        // If not found in level cell, try profession link cell
+        if (!professionSVG) {
+          professionSVG = extractSVGFromElement(professionLink.parent());
+        }
+        
+        // If still not found, try the entire level cell content
+        if (!professionSVG) {
+          professionSVG = extractSVGFromElement($element);
+        }
+        
         if (professionSVG && professionSVG.startsWith('/')) {
           const downloadedSVG = await downloadSVG(professionSVG);
           if (downloadedSVG && !svgs.professions[profession]) {
             svgs.professions[profession] = downloadedSVG;
+            console.log(`Found profession SVG for: ${profession}`);
+          }
+        } else if (professionSVG) {
+          // Inline SVG found
+          if (!svgs.professions[profession]) {
+            svgs.professions[profession] = professionSVG;
+            console.log(`Found inline profession SVG for: ${profession}`);
           }
         }
       }
