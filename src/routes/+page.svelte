@@ -120,6 +120,15 @@
 
   // Function to normalize item names to match icons.json
   function normalizeItemName(name: string): string {
+    // Handle fine quality items (e.g., "coal_fine" -> "Fine Coal")
+    if (name.endsWith('_fine')) {
+      const baseName = name.slice(0, -5); // Remove '_fine'
+      const normalizedBase = baseName.split('_').map(word => 
+        word.charAt(0).toUpperCase() + word.slice(1)
+      ).join(' ');
+      return `Fine ${normalizedBase}`;
+    }
+    
     // Convert snake_case to Title Case (e.g., "spruce_plank" -> "Spruce Plank")
     return name.split('_').map(word => 
       word.charAt(0).toUpperCase() + word.slice(1)
@@ -128,24 +137,59 @@
 
   // Get inventory items as array (including bank)
   $: inventoryItems = (() => {
-    const allItems: Record<string, number> = {};
+    const allItems: Record<string, { normal: number; fine: number }> = {};
     
-    // Add inventory items
+    // Process inventory items
     Object.entries(character.inventory).forEach(([name, quantity]) => {
-      allItems[name] = (allItems[name] || 0) + quantity;
+      let baseName = name;
+      let isFine = false;
+      
+      if (name.endsWith('_fine')) {
+        baseName = name.slice(0, -5); // Remove '_fine'
+        isFine = true;
+      }
+      
+      if (!allItems[baseName]) {
+        allItems[baseName] = { normal: 0, fine: 0 };
+      }
+      
+      if (isFine) {
+        allItems[baseName].fine += quantity;
+      } else {
+        allItems[baseName].normal += quantity;
+      }
     });
     
-    // Add bank items
+    // Process bank items
     Object.entries(character.bank).forEach(([name, quantity]) => {
-      allItems[name] = (allItems[name] || 0) + quantity;
+      let baseName = name;
+      let isFine = false;
+      
+      if (name.endsWith('_fine')) {
+        baseName = name.slice(0, -5); // Remove '_fine'
+        isFine = true;
+      }
+      
+      if (!allItems[baseName]) {
+        allItems[baseName] = { normal: 0, fine: 0 };
+      }
+      
+      if (isFine) {
+        allItems[baseName].fine += quantity;
+      } else {
+        allItems[baseName].normal += quantity;
+      }
     });
     
-    return Object.entries(allItems).map(([name, quantity]) => {
-      const normalizedName = normalizeItemName(name);
+    return Object.entries(allItems).map(([baseName, quantities]) => {
+      const normalizedName = normalizeItemName(baseName);
+      
       return {
         name: normalizedName,
-        quantity,
-        icon: typedIcons.materials[normalizedName]
+        normalQuantity: quantities.normal,
+        fineQuantity: quantities.fine,
+        icon: typedIcons.materials[normalizedName],
+        hasFine: quantities.fine > 0
       };
     });
   })();
@@ -255,7 +299,7 @@
       <h3>Inventario</h3>
       <div class="inventory-grid">
         {#each inventoryItems as item}
-          <div class="inventory-item">
+          <div class="inventory-item" class:has-fine={item.hasFine}>
             {#if item.icon && loadedImages[item.icon]}
               {@const itemIcon = loadedImages[item.icon]}
               {#if itemIcon}
@@ -270,8 +314,15 @@
               {/if}
             {/if}
             <div class="item-info">
-              <div class="item-name">{item.name}</div>
-              <div class="item-quantity">x{item.quantity}</div>
+              <div class="item-name" class:fine-name={item.hasFine}>{item.name}</div>
+              <div class="item-quantities">
+                {#if item.normalQuantity > 0}
+                  <div class="quantity-normal">x{item.normalQuantity}</div>
+                {/if}
+                {#if item.fineQuantity > 0}
+                  <div class="quantity-fine">x{item.fineQuantity} fine</div>
+                {/if}
+              </div>
             </div>
           </div>
         {/each}
@@ -410,6 +461,11 @@
     min-height: 50px;
   }
 
+  .inventory-item.has-fine {
+    background: #f0f8ff;
+    border-color: #4a90e2;
+  }
+
   .item-icon-container {
     width: 30px;
     height: 30px;
@@ -438,9 +494,26 @@
     text-overflow: ellipsis;
   }
 
-  .item-quantity {
+  .item-name.fine-name {
+    color: #4a90e2;
+    font-weight: 600;
+  }
+
+  .item-quantities {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .quantity-normal {
     font-size: 11px;
     color: #666;
+    font-weight: bold;
+  }
+
+  .quantity-fine {
+    font-size: 10px;
+    color: #4a90e2;
     font-weight: bold;
   }
 
