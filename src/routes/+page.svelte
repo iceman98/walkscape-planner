@@ -10,6 +10,10 @@
   let scale = 1;
   let stagePos = { x: 0, y: 0 };
   let stageContainer: HTMLDivElement;
+  let stageOffset = { x: 0, y: 0 }; // Track stage position for zoom centering
+  let isDragging = false;
+  let dragStartPos = { x: 0, y: 0 };
+  let dragStartStagePos = { x: 0, y: 0 };
 
   // Cache for loaded images
   const loadedImages: Record<string, HTMLImageElement> = {};
@@ -36,20 +40,51 @@
   // Load all icons on component mount
   import { onMount } from 'svelte';
   
-  onMount(async () => {
+  onMount(() => {
     // Load all material icons
-    for (const [name, path] of Object.entries(typedIcons.materials)) {
-      const url = `/src/lib/assets/${path.substring(2)}`;
-      const img = await loadImage(url);
-      if (img) loadedImages[path] = img;
-    }
+    const loadMaterialIcons = async () => {
+      for (const [name, path] of Object.entries(typedIcons.materials)) {
+        const url = `/src/lib/assets/${path.substring(2)}`;
+        const img = await loadImage(url);
+        if (img) loadedImages[path] = img;
+      }
+    };
     
     // Load all profession icons
-    for (const [name, path] of Object.entries(typedIcons.professions)) {
-      const url = `/src/lib/assets/${path.substring(2)}`;
-      const img = await loadImage(url);
-      if (img) loadedImages[path] = img;
-    }
+    const loadProfessionIcons = async () => {
+      for (const [name, path] of Object.entries(typedIcons.professions)) {
+        const url = `/src/lib/assets/${path.substring(2)}`;
+        const img = await loadImage(url);
+        if (img) loadedImages[path] = img;
+      }
+    };
+
+    // Add global mouse event listeners
+    const handleGlobalMouseMove = (e: MouseEvent) => {
+      if (!isDragging) return;
+      
+      const dx = e.clientX - dragStartPos.x;
+      const dy = e.clientY - dragStartPos.y;
+      
+      stageOffset.x = dragStartStagePos.x + dx;
+      stageOffset.y = dragStartStagePos.y + dy;
+    };
+
+    const handleGlobalMouseUp = () => {
+      isDragging = false;
+    };
+
+    window.addEventListener('mousemove', handleGlobalMouseMove);
+    window.addEventListener('mouseup', handleGlobalMouseUp);
+
+    // Load icons
+    loadMaterialIcons();
+    loadProfessionIcons();
+
+    return () => {
+      window.removeEventListener('mousemove', handleGlobalMouseMove);
+      window.removeEventListener('mouseup', handleGlobalMouseUp);
+    };
   });
 
   // Group recipes by profession and sort by level then alphabetically
@@ -92,40 +127,54 @@
     const oldScale = stageRef.scaleX();
     const pointer = stageRef.getPointerPosition();
     
-    const mousePointTo = {
-      x: (pointer.x - stageRef.x()) / oldScale,
-      y: (pointer.y - stageRef.y()) / oldScale,
-    };
-
+    if (!pointer) return;
+    
+    // Calculate the new scale
     const newScale = e.evt.deltaY > 0 ? oldScale / scaleBy : oldScale * scaleBy;
     
     // Limit scale
     if (newScale < 0.5 || newScale > 5) return;
+
+    // Calculate the new position to keep the pointer in the same place
+    const mousePointTo = {
+      x: (pointer.x - stageRef.x()) / oldScale,
+      y: (pointer.y - stageRef.y()) / oldScale,
+    };
 
     const newPos = {
       x: pointer.x - mousePointTo.x * newScale,
       y: pointer.y - mousePointTo.y * newScale,
     };
 
+    // Apply the new scale and position
     stageRef.scaleX(newScale);
     stageRef.scaleY(newScale);
-    stageRef.position(newPos);
+    stageRef.x(newPos.x);
+    stageRef.y(newPos.y);
     stageRef.batchDraw();
     
+    // Update the scale variable for Svelte reactivity
     scale = newScale;
   }
 
-  function handleDragStart() {
-    if (!stageRef) return;
-    const pos = stageRef.position();
-    stagePos = { x: pos.x, y: pos.y };
+  function handleMouseDown(e: MouseEvent) {
+    isDragging = true;
+    dragStartPos = { x: e.clientX, y: e.clientY };
+    dragStartStagePos = { x: stageOffset.x, y: stageOffset.y };
   }
 
-  function handleDragMove() {
-    if (!stageRef) return;
-    const pos = stageRef.position();
-    stageRef.position(pos);
-    stageRef.batchDraw();
+  function handleMouseMove(e: { evt: MouseEvent }) {
+    if (!isDragging) return;
+    
+    const dx = e.evt.clientX - dragStartPos.x;
+    const dy = e.evt.clientY - dragStartPos.y;
+    
+    stageOffset.x = dragStartStagePos.x + dx;
+    stageOffset.y = dragStartStagePos.y + dy;
+  }
+
+  function handleMouseUp() {
+    isDragging = false;
   }
 
   function handleNativeWheel(e: WheelEvent) {
@@ -134,37 +183,40 @@
     e.preventDefault();
     
     const scaleBy = 1.1;
-    const oldScale = scale; // Use our scale variable
-    const stage = stageRef; // Try direct access
+    const oldScale = scale;
+    
+    // Get mouse position relative to the container
+    const rect = stageContainer.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
     
     const newScale = e.deltaY > 0 ? oldScale / scaleBy : oldScale * scaleBy;
     
     // Limit scale
     if (newScale < 0.5 || newScale > 5) return;
     
-    // Update scale variable and let Svelte handle the rest
+    // Calculate the offset to keep the mouse position fixed
+    const scaleChange = newScale - oldScale;
+    const offsetX = -(mouseX - stageOffset.x) * scaleChange / oldScale;
+    const offsetY = -(mouseY - stageOffset.y) * scaleChange / oldScale;
+    
+    // Update scale and offset
     scale = newScale;
-  }
-
-  function handleDragEnd() {
-    if (!stageRef) return;
-    const pos = stageRef.position();
-    stagePos = { x: pos.x, y: pos.y };
+    stageOffset.x += offsetX;
+    stageOffset.y += offsetY;
   }
 </script>
 
 {#if browser}
-  <div bind:this={stageContainer} on:wheel={handleNativeWheel}>
+  <div bind:this={stageContainer} on:wheel={handleNativeWheel} on:mousedown={handleMouseDown}>
     <Stage 
       bind:this={stageRef}
       width={window.innerWidth} 
       height={window.innerHeight}
       scaleX={scale}
       scaleY={scale}
-      draggable={true}
-      on:dragstart={handleDragStart}
-      on:dragmove={handleDragMove}
-      on:dragend={handleDragEnd}
+      x={stageOffset.x}
+      y={stageOffset.y}
     >
     <Layer>
       {#each Object.entries(sortedGroupedRecipes) as [profession, professionRecipes]}
