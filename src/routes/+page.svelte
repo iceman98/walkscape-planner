@@ -118,6 +118,38 @@
     return acc;
   }, {});
 
+  // Function to normalize item names to match icons.json
+  function normalizeItemName(name: string): string {
+    // Convert snake_case to Title Case (e.g., "spruce_plank" -> "Spruce Plank")
+    return name.split('_').map(word => 
+      word.charAt(0).toUpperCase() + word.slice(1)
+    ).join(' ');
+  }
+
+  // Get inventory items as array (including bank)
+  $: inventoryItems = (() => {
+    const allItems: Record<string, number> = {};
+    
+    // Add inventory items
+    Object.entries(character.inventory).forEach(([name, quantity]) => {
+      allItems[name] = (allItems[name] || 0) + quantity;
+    });
+    
+    // Add bank items
+    Object.entries(character.bank).forEach(([name, quantity]) => {
+      allItems[name] = (allItems[name] || 0) + quantity;
+    });
+    
+    return Object.entries(allItems).map(([name, quantity]) => {
+      const normalizedName = normalizeItemName(name);
+      return {
+        name: normalizedName,
+        quantity,
+        icon: typedIcons.materials[normalizedName]
+      };
+    });
+  })();
+
   function handleWheel(e: { evt: WheelEvent }) {
     if (!stageRef) return;
     
@@ -177,6 +209,15 @@
     isDragging = false;
   }
 
+  // Canvas action to draw icons
+  function canvasIcon(node: HTMLCanvasElement, icon: HTMLImageElement) {
+    const ctx = node.getContext('2d');
+    if (!ctx) return;
+
+    // Draw the icon
+    ctx.drawImage(icon, 0, 0, 30, 30);
+  }
+
   function handleNativeWheel(e: WheelEvent) {
     if (!stageRef) return;
     
@@ -208,16 +249,46 @@
 </script>
 
 {#if browser}
-  <div bind:this={stageContainer} on:wheel={handleNativeWheel} on:mousedown={handleMouseDown}>
-    <Stage 
-      bind:this={stageRef}
-      width={window.innerWidth} 
-      height={window.innerHeight}
-      scaleX={scale}
-      scaleY={scale}
-      x={stageOffset.x}
-      y={stageOffset.y}
-    >
+  <div class="container">
+    <!-- Inventory Panel -->
+    <div class="inventory-panel">
+      <h3>Inventario</h3>
+      <div class="inventory-grid">
+        {#each inventoryItems as item}
+          <div class="inventory-item">
+            {#if item.icon && loadedImages[item.icon]}
+              {@const itemIcon = loadedImages[item.icon]}
+              {#if itemIcon}
+                <div class="item-icon-container">
+                  <canvas 
+                    width={30} 
+                    height={30} 
+                    class="item-icon-canvas"
+                    use:canvasIcon={itemIcon}
+                  ></canvas>
+                </div>
+              {/if}
+            {/if}
+            <div class="item-info">
+              <div class="item-name">{item.name}</div>
+              <div class="item-quantity">x{item.quantity}</div>
+            </div>
+          </div>
+        {/each}
+      </div>
+    </div>
+    
+    <!-- Recipe Canvas -->
+    <div bind:this={stageContainer} on:wheel={handleNativeWheel} on:mousedown={handleMouseDown} class="recipe-canvas">
+      <Stage 
+        bind:this={stageRef}
+        width={window.innerWidth - 320} 
+        height={window.innerHeight}
+        scaleX={scale}
+        scaleY={scale}
+        x={stageOffset.x}
+        y={stageOffset.y}
+      >
     <Layer>
       {#each Object.entries(sortedGroupedRecipes) as [profession, professionRecipes]}
         <Group x={10} y={professionPositions[profession]}>
@@ -298,5 +369,83 @@
       {/each}
     </Layer>
   </Stage>
+    </div>
   </div>
 {/if}
+
+<style>
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+
+  .inventory-panel {
+    width: 300px;
+    background: #f5f5f5;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+    padding: 20px;
+  }
+
+  .inventory-panel h3 {
+    margin: 0 0 20px 0;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .inventory-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .inventory-item {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px;
+    min-height: 50px;
+  }
+
+  .item-icon-container {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .item-icon-canvas {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+
+  .item-info {
+    flex: 1;
+  }
+
+  .item-name {
+    font-size: 12px;
+    font-weight: 500;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .item-quantity {
+    font-size: 11px;
+    color: #666;
+    font-weight: bold;
+  }
+
+  .recipe-canvas {
+    flex: 1;
+    position: relative;
+  }
+</style>
