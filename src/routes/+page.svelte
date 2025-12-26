@@ -28,6 +28,7 @@
   let isDragging = false;
   let dragStartPos = { x: 0, y: 0 };
   let dragStartStagePos = { x: 0, y: 0 };
+  let showOnlyCraftable = false; // Toggle for craftable recipes only
 
   // Cache for loaded images
   const loadedImages: Record<string, HTMLImageElement> = {};
@@ -290,10 +291,10 @@
   $: recipesWithCraftingInfo = sortedGroupedRecipes && Object.keys(sortedGroupedRecipes).reduce((acc: Record<string, any[]>, profession) => {
     acc[profession] = sortedGroupedRecipes[profession].map((recipe: any) => {
       const inventoryMap: Record<string, { normal: number; fine: number }> = {};
-    inventoryItems.forEach(item => {
-      const snakeCaseName = recipeNameToInventoryName(item.name);
-      inventoryMap[snakeCaseName] = { normal: item.normalQuantity, fine: item.fineQuantity };
-    });
+      inventoryItems.forEach(item => {
+        const snakeCaseName = recipeNameToInventoryName(item.name);
+        inventoryMap[snakeCaseName] = { normal: item.normalQuantity, fine: item.fineQuantity };
+      });
       
       const craftingTimes = calculateCraftingTimes(recipe, inventoryMap);
       
@@ -303,6 +304,10 @@
         canCraft: craftingTimes.normal > 0 || craftingTimes.fine > 0,
         inventoryMap // Pass inventoryMap to template
       };
+    }).filter((recipe: any) => {
+      // Filter recipes based on toggle
+      if (!showOnlyCraftable) return true;
+      return recipe.canCraft && recipe.craftingTimes.missingLevel === 0;
     });
     return acc;
   }, {});
@@ -479,6 +484,20 @@
     <!-- Inventory Panel -->
     <div class="inventory-panel">
       <h3>Inventario</h3>
+      
+      <!-- Toggle for craftable recipes only -->
+      <div class="toggle-container">
+        <label class="toggle-label">
+          <input 
+            type="checkbox" 
+            bind:checked={showOnlyCraftable} 
+            class="toggle-input"
+          />
+          <span class="toggle-slider"></span>
+          <span class="toggle-text">Mostrar solo recetas posibles</span>
+        </label>
+      </div>
+      
       <div class="inventory-grid">
         {#each inventoryItems as item}
           <div class="inventory-item" class:has-fine={item.hasFine}>
@@ -660,6 +679,61 @@
     color: #333;
     font-size: 18px;
     font-weight: bold;
+  }
+
+  .toggle-container {
+    margin-bottom: 20px;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+  }
+
+  .toggle-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+  }
+
+  .toggle-input {
+    display: none;
+  }
+
+  .toggle-slider {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background: #ccc;
+    border-radius: 12px;
+    margin-right: 10px;
+    transition: background 0.3s ease;
+  }
+
+  .toggle-slider::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .toggle-input:checked + .toggle-slider {
+    background: #4CAF50;
+  }
+
+  .toggle-input:checked + .toggle-slider::before {
+    transform: translateX(20px);
+  }
+
+  .toggle-text {
+    user-select: none;
   }
 
   .inventory-grid {
