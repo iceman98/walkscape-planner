@@ -3,69 +3,3325 @@
         "name": "Create a Birch Plank (Scrap)",
         "output": "Birch Plank",
         "requirements": {
+            "materials": [
+                {
+                    "name": "Wood Scrap",
+                    "amount": 1
+                }
+            ],
             "profession": {
                 "name": "Carpentry",
                 "level": 1
             },
+            "service": "Basic Sawmill"
+        }
+    },
+    {
+        "name": "Cut a Birch Plank",
+        "output": "Birch Plank",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Birch Logs",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Carpentry",
+                "level": 1
+            },
+            "service": "Basic Sawmill"
+        }
+    },
+    {
+        "name": "Make a Wooden Shield",
+        "output": "Wooden Shield",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Birch Plank",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Carpentry",
+                "level": 1
+            },
+            "service": "Basic Sawmill"
+        }
+    },
+    {
+        "name": "Make a Wooden Sword",
+        "output": "Wooden Sword",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Birch Plank",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Carpentry",
+                "level": 1
+            },
+            "service": "Basic Sawmill"
+        }
+    },
+    {
+        "name": "Create a Pine Plank (Scrap)",
+        "output": "Pine Plank",
+        "requirements": {
             "materials": [
                 {
                     "name": "Wood Scrap",
-                    "amount": 5
+                    "amount": 1
                 }
             ],
+            "profession": {
+                "name": "Carpentry",
+                "level": 10
+            },
             "service": "Basic Sawmill"
+        }
+    },
+    {
+        "name": "Cut a Pine Plank",
+        "output": "Pine Plank",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Pine Logs",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Carpentry",
+                "level": 10
+            },
+            "service": "Basic Sawmill"
+        }
+    },
+    {
+        "name": "Create a Spruce Plank (Scrap)",
+        "output": "Spruce Plank",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Wood Scrap",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Carpentry",
+                "level": 20
+            },
+            "service": "Basic Sawmill"
+        }
+    },
+    {
+        "name": "Cut a Spruce Plank",
+        "output": "Spruce Plank",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Spruce Logs",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Carpentry",
+                "level": 20
+            },
+            "service": "Basic Sawmill"
+        }
+    },
+    {
+        "name": "Create an Oak Plank (Scrap)",
+        "output": "Oak Plank",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Wood Scrap",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Carpentry",
+                "level": 25
+            },
+            "service": "Basic Sawmill"
+        }
+    },
+    {
+        "name": "Cut an Oak Plank",
+        "output": "Oak Plank",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Oak Logs",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Carpentry",
+                "level": 25
+            },
+            "service": "Basic Sawmill"
+        }
+    },
+    {
+        "name": "Create a Maple Plank (Scrap)",
+        "output": "Maple Plank",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Wood Scrap",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Carpentry",
+                "level": 30
+            },
+            "service": "Basic Sawmill"
+        }
+    },
+    {
+        "name": "Cut a Maple Plank",
+        "output": "Maple Plank",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Maple Logs",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Carpentry",
+                "level": 30
+            },
+            "service": "Basic Sawmill"
+        }
+    },
+    {
+        "name": "Create a Teak Plank (Scrap)",
+        "output": "Teak Plank",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Wood Scrap",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Carpentry",
+                "level": 40
+            },
+            "service": "Basic Sawmill"
+        }
+    },
+    {
+        "name": "Create a Willow Plank (Scrap)",
+        "output": "Willow Plank",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Wood Scrap",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Carpentry",
+                "level": 40
+            },
+            "service": "Basic Sawmill"
+        }
+    },
+    {
+        "name": "Cut a Teak Plank",
+        "output": "Teak Plank",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Teak Logs",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Carpentry",
+                "level": 40
+            },
+            "service": "Basic Sawmill"
+        }
+    },
+    {
+        "name": "Cut a Willow Plank",
+        "output": "Willow Plank",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Willow Logs",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Carpentry",
+                "level": 40
+            },
+            "service": "Basic Sawmill"
+        }
+    },
+    {
+        "name": "Cut a Bamboo Plank",
+        "output": "Bamboo Plank",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Bamboo Logs",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Carpentry",
+                "level": 45
+            },
+            "service": "Basic Sawmill"
+        }
+    },
+    {
+        "name": "Cut a Coral Plank",
+        "output": "Coral Plank",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Coral",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Carpentry",
+                "level": 45
+            },
+            "service": "Basic Sawmill"
+        }
+    },
+    {
+        "name": "Cut a Mangrove Plank",
+        "output": "Mangrove Plank",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Mangrove Logs",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Carpentry",
+                "level": 50
+            },
+            "service": "Advanced Sawmill"
+        }
+    },
+    {
+        "name": "Fry a  Perch",
+        "output": "Perch",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Raw Perch",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 1
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Fry a  Shrimp",
+        "output": "Shrimp",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Raw Shrimp",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 1
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Brew Nettle Tea",
+        "output": "Nettle Tea",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Nettle",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 3
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Fry  a Carp",
+        "output": "a Carp",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Raw Carp",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 5
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Bake Bread",
+        "output": "Bread",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Wheat",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 8
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Fry a  Pike",
+        "output": "Pike",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Raw Pike",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 10
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Make Porridge",
+        "output": "Porridge",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Wheat",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 15
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Make Pancakes",
+        "output": "Pancakes",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Wheat",
+                    "amount": 1
+                },
+                {
+                    "name": "Milk",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 17
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Fry a  Trout",
+        "output": "Trout",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Raw Trout",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 20
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Mix Chocolate Milk",
+        "output": "Chocolate Milk",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Chocolate",
+                    "amount": 1
+                },
+                {
+                    "name": "Milk",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 22
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Bake a Bagel",
+        "output": "Bagel",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Wheat",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 25
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Make Milk",
+        "output": "Milk",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Milkweed",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 25
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Make Pickles",
+        "output": "Pickles",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Cucumber",
+                    "amount": 1
+                },
+                {
+                    "name": "Salt Crystal",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 27
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Fry  a Salmon",
+        "output": "a Salmon",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Raw Salmon",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 30
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Fry a  Jellyfish",
+        "output": "Jellyfish",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Raw Jellyfish",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 30
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Make Trout Soup",
+        "output": "Trout Soup",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Raw Trout",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 30
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Make Mushroom Curry",
+        "output": "Mushroom Curry",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Mushroom",
+                    "amount": 1
+                },
+                {
+                    "name": "Tomato",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 32
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Fry a  Lobster",
+        "output": "Lobster",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Raw Lobster",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 35
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Make a Mud Pie",
+        "output": "Mud Pie",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Mud",
+                    "amount": 1
+                },
+                {
+                    "name": "Wheat",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 35
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Harden Kelp",
+        "output": "Harden Kelp",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Kelp",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 35
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Prepare a  Kelp Roll",
+        "output": "Kelp Roll",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Sweet Kelp",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 36
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Make a Jelly Sandwich",
+        "output": "Jelly Sandwich",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Berries",
+                    "amount": 1
+                },
+                {
+                    "name": "Bread",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 37
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Assemble Dynamite",
+        "output": "Dynamite",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Salt Crystal",
+                    "amount": 1
+                },
+                {
+                    "name": "Volcanic Ash",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 38
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Fry a  Swordfish",
+        "output": "Swordfish",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Raw Swordfish",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 40
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Make a Roasted Bell Pepper",
+        "output": "Roasted Bell Pepper",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Bell Pepper",
+                    "amount": 1
+                },
+                {
+                    "name": "Pepper",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 44
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Brew Saltrum",
+        "output": "Saltrum",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Salty Hops",
+                    "amount": 1
+                },
+                {
+                    "name": "Salt Crystal",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 45
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Fry  a Stingray",
+        "output": "a Stingray",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Raw Stingray",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 45
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Fry a  Squid",
+        "output": "Squid",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Raw Squid",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 45
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Make a Sweet Carrot Pie",
+        "output": "Sweet Carrot Pie",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Carrot",
+                    "amount": 1
+                },
+                {
+                    "name": "Honeycomb",
+                    "amount": 1
+                },
+                {
+                    "name": "Wheat",
+                    "amount": 1
+                },
+                {
+                    "name": "Egg",
+                    "amount": 1
+                },
+                {
+                    "name": "Potato",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 45
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Bake Salmon Pie",
+        "output": "Salmon Pie",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Raw Salmon",
+                    "amount": 1
+                },
+                {
+                    "name": "Wheat",
+                    "amount": 1
+                },
+                {
+                    "name": "Egg",
+                    "amount": 1
+                },
+                {
+                    "name": "Potato",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 46
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Make a Fried Fish Sandwich",
+        "output": "Fried Fish Sandwich",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Raw Swordfish",
+                    "amount": 1
+                },
+                {
+                    "name": "Bread",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 46
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Prepare an Underwater Salad",
+        "output": "Underwater Salad",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Sea Cabbage",
+                    "amount": 1
+                },
+                {
+                    "name": "Sea Spinach",
+                    "amount": 1
+                },
+                {
+                    "name": "Underwater Lotus",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 46
+            },
+            "service": "Basic Kitchen"
+        }
+    },
+    {
+        "name": "Fry  a Shark",
+        "output": "a Shark",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Raw Shark",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 50
+            },
+            "service": "Advanced Kitchen"
+        }
+    },
+    {
+        "name": "Fry  a Largemouth Bass",
+        "output": "a Largemouth Bass",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Raw Largemouth Bass",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 55
+            },
+            "service": "Advanced Kitchen"
+        }
+    },
+    {
+        "name": "Fry  an Anglerfish",
+        "output": "an Anglerfish",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Raw Anglerfish",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Cooking",
+                "level": 60
+            },
+            "service": "Advanced Kitchen"
         }
     },
     {
         "name": "Make a Basic Hatchet",
         "output": "Basic Hatchet",
         "requirements": {
-            "profession": {
-                "name": "Crafting",
-                "level": 1
-            },
             "materials": [
                 {
                     "name": "Stone",
-                    "amount": 2
+                    "amount": 1
                 },
                 {
                     "name": "Wooden Stick",
                     "amount": 1
                 }
-            ]
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 1
+            }
+        }
+    },
+    {
+        "name": "Make a Basic Pickaxe",
+        "output": "Basic Pickaxe",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Stone",
+                    "amount": 1
+                },
+                {
+                    "name": "Wooden Stick",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 1
+            }
+        }
+    },
+    {
+        "name": "Make a Basic Sickle",
+        "output": "Basic Sickle",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Stone",
+                    "amount": 1
+                },
+                {
+                    "name": "Wooden Stick",
+                    "amount": 1
+                },
+                {
+                    "name": "Twine",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 1
+            }
         }
     },
     {
         "name": "Spin Flax into Twine",
         "output": "Twine",
         "requirements": {
-            "profession": {
-                "name": "Crafting",
-                "level": 1
-            },
             "materials": [
                 {
                     "name": "Flax",
-                    "amount": 2
+                    "amount": 1
                 }
-            ]
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 1
+            }
+        }
+    },
+    {
+        "name": "Craft a Copper Hatchet",
+        "output": "Copper Hatchet",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Copper Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Birch Plank",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 2
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Copper Pickaxe",
+        "output": "Copper Pickaxe",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Copper Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Birch Plank",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 2
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Make a Copper Sickle",
+        "output": "Copper Sickle",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Copper Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Birch Plank",
+                    "amount": 1
+                },
+                {
+                    "name": "Twine",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 2
+            },
+            "service": "Basic Workshop"
         }
     },
     {
         "name": "Weave a Basic Fishing Net",
         "output": "Basic Fishing Net",
         "requirements": {
-            "profession": {
-                "name": "Crafting",
-                "level": 2
-            },
             "materials": [
                 {
                     "name": "Twine",
                     "amount": 1
                 }
-            ]
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 2
+            }
+        }
+    },
+    {
+        "name": "Craft a Basic  Fishing Rod",
+        "output": "Fishing",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Wooden Stick",
+                    "amount": 1
+                },
+                {
+                    "name": "Fishing Line",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 4
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Bag of Rocks",
+        "output": "Bag of Rocks",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Sturdy Branch",
+                    "amount": 1
+                },
+                {
+                    "name": "Large Stone",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 5
+            }
+        }
+    },
+    {
+        "name": "Craft a Bronze Hatchet",
+        "output": "Bronze Hatchet",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Bronze Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Pine Plank",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 10
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Bronze Pickaxe",
+        "output": "Bronze Pickaxe",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Bronze Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Pine Plank",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 10
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Pine Fishing Rod",
+        "output": "Pine Fishing Rod",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Pine Plank",
+                    "amount": 1
+                },
+                {
+                    "name": "Fishing Line",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 10
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Upcycle Trash",
+        "output": "Upcycle Trash",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Trash",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 10
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Wanderlust Walking Stick",
+        "output": "Wanderlust Walking Stick",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Silver Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Walking Stick",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 12
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Weave a Large Fishing Net",
+        "output": "Large Fishing Net",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Twine",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 15
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft an Iron Hatchet",
+        "output": "Iron Hatchet",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Iron Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Spruce Plank",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 20
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft an Iron Pickaxe",
+        "output": "Iron Pickaxe",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Iron Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Spruce Plank",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 20
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft an Iron Sickle",
+        "output": "Iron Sickle",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Iron Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Spruce Plank",
+                    "amount": 1
+                },
+                {
+                    "name": "Twine",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 20
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Fishing Spear",
+        "output": "Fishing Spear",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Iron Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Maple Plank",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 25
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Kelp Diving Mask",
+        "output": "Kelp Diving Mask",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Hardened Kelp",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 25
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Kelp Diving Pants",
+        "output": "Kelp Diving Pants",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Hardened Kelp",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 25
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Kelp Diving Shirt",
+        "output": "Kelp Diving Shirt",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Hardened Kelp",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 25
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Steel Hatchet",
+        "output": "Steel Hatchet",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Steel Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Maple Plank",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 30
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Steel Pickaxe",
+        "output": "Steel Pickaxe",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Steel Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Maple Plank",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 30
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Steel Sickle",
+        "output": "Steel Sickle",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Steel Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Maple Plank",
+                    "amount": 1
+                },
+                {
+                    "name": "Twine",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 30
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft an Oak Fishing Rod",
+        "output": "Oak Fishing Rod",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Oak Plank",
+                    "amount": 1
+                },
+                {
+                    "name": "Fishing Line",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 30
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Lobster Pot",
+        "output": "Lobster Pot",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Steel Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Teak Plank",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 35
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft Kelp Twine",
+        "output": "Kelp Twine",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Hardened Kelp",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 37
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft Reinforced Bellows",
+        "output": "Reinforced Bellows",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Steel Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Forge Bellows",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 37
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Jellyfishing Net",
+        "output": "Jellyfishing Net",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Kelp Twine",
+                    "amount": 1
+                },
+                {
+                    "name": "Sturdy Branch",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 37
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Tarsilium Hatchet",
+        "output": "Tarsilium Hatchet",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Tarsilium Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Teak Plank",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 40
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Tarsilium Pickaxe",
+        "output": "Tarsilium Pickaxe",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Tarsilium Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Teak Plank",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 40
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Willow Fishing Rod",
+        "output": "Willow Fishing Rod",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Willow Plank",
+                    "amount": 1
+                },
+                {
+                    "name": "Fishing Line",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 40
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft Hydrilium",
+        "output": "Hydrilium",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Hardened Kelp",
+                    "amount": 1
+                },
+                {
+                    "name": "Volcanic Rock",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 45
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Coral Fishing Spear",
+        "output": "Coral Fishing Spear",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Hydrilium Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Coral Plank",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 45
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Hydrilium Diving Helm",
+        "output": "Hydrilium Diving Helm",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Hydrilium",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 45
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Hydrilium Diving Leggings",
+        "output": "Hydrilium Diving Leggings",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Hydrilium",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 45
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Hydrilium Diving Torso",
+        "output": "Hydrilium Diving Torso",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Hydrilium",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 45
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Hydrilium Hatchet",
+        "output": "Hydrilium Hatchet",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Hydrilium Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Coral Plank",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 45
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Hydrilium Pickaxe",
+        "output": "Hydrilium Pickaxe",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Hydrilium Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Coral Plank",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 45
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Hydrilium Sickle",
+        "output": "Hydrilium Sickle",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Hydrilium Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Coral Plank",
+                    "amount": 1
+                },
+                {
+                    "name": "Kelp Twine",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 45
+            },
+            "service": "Basic Workshop"
+        }
+    },
+    {
+        "name": "Craft a Farganite Hatchet",
+        "output": "Farganite Hatchet",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Farganite Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Mangrove Plank",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 50
+            },
+            "service": "Advanced Workshop"
+        }
+    },
+    {
+        "name": "Craft a Farganite Pickaxe",
+        "output": "Farganite Pickaxe",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Farganite Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Mangrove Plank",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 50
+            },
+            "service": "Advanced Workshop"
+        }
+    },
+    {
+        "name": "Craft a Hydrilium Log Splitter",
+        "output": "Hydrilium Log Splitter",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Hydrilium Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Log Splitter",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 52
+            },
+            "service": "Advanced Workshop"
+        }
+    },
+    {
+        "name": "Craft a Hydrilium Magnet",
+        "output": "Hydrilium Magnet",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Hydrilium Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Miner's Magnet",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 54
+            },
+            "service": "Advanced Workshop"
+        }
+    },
+    {
+        "name": "Craft a Mangrove Basket",
+        "output": "Mangrove Basket",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Mangrove Plank",
+                    "amount": 1
+                },
+                {
+                    "name": "Big Basket",
+                    "amount": 1
+                },
+                {
+                    "name": "Log Basket",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Crafting",
+                "level": 55
+            },
+            "service": "Advanced Workshop"
+        }
+    },
+    {
+        "name": "Create a Copper Bar (Scrap)",
+        "output": "Copper Bar",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Metal Scrap",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 1
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Smelt a Copper Bar",
+        "output": "Copper Bar",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Copper Ore",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 1
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Make a Copper Shield",
+        "output": "Copper Shield",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Copper Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 3
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Smelt a Silver Bar",
+        "output": "Silver Bar",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Silver Nugget",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 5
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Make a Copper Sword",
+        "output": "Copper Sword",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Copper Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 6
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Create a Bronze Bar (Scrap)",
+        "output": "Bronze Bar",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Metal Scrap",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 10
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Smelt a Bronze Bar",
+        "output": "Bronze Bar",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Copper Ore",
+                    "amount": 1
+                },
+                {
+                    "name": "Tin Ore",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 10
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Make a Bronze Shield",
+        "output": "Bronze Shield",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Bronze Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 13
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Smelt a Gold Bar",
+        "output": "Gold Bar",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Gold Nugget",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 15
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Make a Bronze Sword",
+        "output": "Bronze Sword",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Bronze Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 16
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Create an Iron Bar (Scrap)",
+        "output": "Iron Bar",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Metal Scrap",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 20
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Smelt an Iron Bar",
+        "output": "Iron Bar",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Iron Ore",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 20
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Make an Iron Shield",
+        "output": "Iron Shield",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Iron Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 23
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Make an Iron Sword",
+        "output": "Iron Sword",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Iron Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 26
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Create a Steel Bar (Scrap)",
+        "output": "Steel Bar",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Metal Scrap",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 30
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Smelt a Steel Bar",
+        "output": "Steel Bar",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Iron Ore",
+                    "amount": 1
+                },
+                {
+                    "name": "Coal",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 30
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Make a Steel Shield",
+        "output": "Steel Shield",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Steel Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 33
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Make a Steel Sword",
+        "output": "Steel Sword",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Steel Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 36
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Create a Tarsilium Bar (Scrap)",
+        "output": "Tarsilium Bar",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Metal Scrap",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 40
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Smelt a Tarsilium Bar",
+        "output": "Tarsilium Bar",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Tarsilium Ore",
+                    "amount": 1
+                },
+                {
+                    "name": "Coal",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 40
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Make  Tarsilium-toed Boots",
+        "output": "Tarsilium-toed Boots",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Tarsilium Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Steel-Toe Boots",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 41
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Make a Tarsilium Shield",
+        "output": "Tarsilium Shield",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Tarsilium Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 43
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Smelt a Hydrilium Bar",
+        "output": "Hydrilium Bar",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Kelp",
+                    "amount": 1
+                },
+                {
+                    "name": "Hydrilium",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 45
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Make a Tarsilium Sword",
+        "output": "Tarsilium Sword",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Tarsilium Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 46
+            },
+            "service": "Basic Forge"
+        }
+    },
+    {
+        "name": "Smelt a Farganite Bar",
+        "output": "Farganite Bar",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Farganite Ore",
+                    "amount": 1
+                },
+                {
+                    "name": "Coal",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 50
+            },
+            "service": "Advanced Forge"
+        }
+    },
+    {
+        "name": "Make a Farganite Shield",
+        "output": "Farganite Shield",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Farganite Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 53
+            },
+            "service": "Advanced Forge"
+        }
+    },
+    {
+        "name": "Make a Farganite Sword",
+        "output": "Farganite Sword",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Farganite Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 56
+            },
+            "service": "Advanced Forge"
+        }
+    },
+    {
+        "name": "Make a Gem Shield",
+        "output": "Gem Shield",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Farganite Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Gold Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Sun Stone",
+                    "amount": 1
+                },
+                {
+                    "name": "Ruby",
+                    "amount": 1
+                },
+                {
+                    "name": "Jade",
+                    "amount": 1
+                },
+                {
+                    "name": "Topaz",
+                    "amount": 1
+                },
+                {
+                    "name": "Wrentmarine",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Smithing",
+                "level": 59
+            },
+            "service": "Advanced Forge"
+        }
+    },
+    {
+        "name": "Create a Jarvonian Flower Necklace",
+        "output": "Jarvonian Flower Necklace",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Moondaisy",
+                    "amount": 1
+                },
+                {
+                    "name": "Snowdrop",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 1
+            }
+        }
+    },
+    {
+        "name": "Shape an Opal",
+        "output": "Opal",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Rough Opal",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 1
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create a Silver Ring",
+        "output": "Silver Ring",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Silver Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 5
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Shape a Star Pearl",
+        "output": "Star Pearl",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Rough Star Pearl",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 8
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create a Silver Opal Ring",
+        "output": "Silver Opal Ring",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Opal",
+                    "amount": 1
+                },
+                {
+                    "name": "Silver Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 10
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create a Gold Ring",
+        "output": "Gold Ring",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Gold Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 15
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Shape a Wrentmarine",
+        "output": "Wrentmarine",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Rough Wrentmarine",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 15
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create a Silver Star Pearl Ring",
+        "output": "Silver Star Pearl Ring",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Star Pearl",
+                    "amount": 1
+                },
+                {
+                    "name": "Silver Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 17
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create a Gold Opal Ring",
+        "output": "Gold Opal Ring",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Opal",
+                    "amount": 1
+                },
+                {
+                    "name": "Gold Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 20
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Shape a Topaz",
+        "output": "Topaz",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Rough Topaz",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 21
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create a Silver Wrentmarine Ring",
+        "output": "Silver Wrentmarine Ring",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Wrentmarine",
+                    "amount": 1
+                },
+                {
+                    "name": "Silver Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 24
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Shape a Jade",
+        "output": "Jade",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Rough Jade",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 26
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create a Gold Star Pearl Ring",
+        "output": "Gold Star Pearl Ring",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Star Pearl",
+                    "amount": 1
+                },
+                {
+                    "name": "Gold Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 27
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create an Amulet of Finding",
+        "output": "Amulet of Finding",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Compass Trinket",
+                    "amount": 1
+                },
+                {
+                    "name": "Gold Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Silver Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 27
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create a Silver Topaz Ring",
+        "output": "Silver Topaz Ring",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Topaz",
+                    "amount": 1
+                },
+                {
+                    "name": "Silver Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 30
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Shape a Ruby",
+        "output": "Ruby",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Rough Ruby",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 30
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create an Amulet of Eel",
+        "output": "Amulet of Eel",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Eel Trinket",
+                    "amount": 1
+                },
+                {
+                    "name": "Gold Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Silver Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 31
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create an Amulet of Heron",
+        "output": "Amulet of Heron",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Heron Trinket",
+                    "amount": 1
+                },
+                {
+                    "name": "Gold Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Silver Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 33
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create a Gold Wrentmarine Ring",
+        "output": "Gold Wrentmarine Ring",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Wrentmarine",
+                    "amount": 1
+                },
+                {
+                    "name": "Gold Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 34
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Shape a Sun Stone",
+        "output": "Sun Stone",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Rough Sun Stone",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 34
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create a Silver Jade Ring",
+        "output": "Silver Jade Ring",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Jade",
+                    "amount": 1
+                },
+                {
+                    "name": "Silver Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 35
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create an Amulet of Bat",
+        "output": "Amulet of Bat",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Bat Trinket",
+                    "amount": 1
+                },
+                {
+                    "name": "Gold Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Silver Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 35
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create an Amulet of Cooling Ice",
+        "output": "Amulet of Cooling Ice",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Cooling Icicle Trinket",
+                    "amount": 1
+                },
+                {
+                    "name": "Gold Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Silver Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 37
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Shape an Ethernite",
+        "output": "Ethernite",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Rough Ethernite",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 38
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create a Silver Ruby Ring",
+        "output": "Silver Ruby Ring",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Ruby",
+                    "amount": 1
+                },
+                {
+                    "name": "Silver Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 39
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create a Gold Topaz Ring",
+        "output": "Gold Topaz Ring",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Topaz",
+                    "amount": 1
+                },
+                {
+                    "name": "Gold Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 40
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create an  Amulet of Root",
+        "output": "Amulet of Root",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Circular Root Trinket",
+                    "amount": 1
+                },
+                {
+                    "name": "Gold Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Silver Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 41
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create an Amulet of Pink Pearl",
+        "output": "Amulet of Pink Pearl",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Pink Pearl Trinket",
+                    "amount": 1
+                },
+                {
+                    "name": "Pearls",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 42
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create a Silver Sun Stone Ring",
+        "output": "Silver Sun Stone Ring",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Sun Stone",
+                    "amount": 1
+                },
+                {
+                    "name": "Silver Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 43
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create an Amulet of Measuring Spoons",
+        "output": "Amulet of Measuring Spoons",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Measuring Spoons Trinket",
+                    "amount": 1
+                },
+                {
+                    "name": "Gold Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Silver Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 43
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create a Gold Jade Ring",
+        "output": "Gold Jade Ring",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Jade",
+                    "amount": 1
+                },
+                {
+                    "name": "Gold Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 45
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create an Amulet of Shrimp",
+        "output": "Amulet of Shrimp",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Shrimp Trinket",
+                    "amount": 1
+                },
+                {
+                    "name": "Gold Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Silver Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 45
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create a Silver Ethernite Ring",
+        "output": "Silver Ethernite Ring",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Ethernite",
+                    "amount": 1
+                },
+                {
+                    "name": "Silver Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 47
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create a Gold Ruby Ring",
+        "output": "Gold Ruby Ring",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Ruby",
+                    "amount": 1
+                },
+                {
+                    "name": "Gold Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 49
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create an Amulet of Beaver",
+        "output": "Amulet of Beaver",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Beaver Trinket",
+                    "amount": 1
+                },
+                {
+                    "name": "Gold Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Silver Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 49
+            },
+            "service": "Basic Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create an Amulet of Lucky Rabbit's Foot",
+        "output": "Amulet of Lucky Rabbit's Foot",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Lucky Rabbit Foot Trinket",
+                    "amount": 1
+                },
+                {
+                    "name": "Gold Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Silver Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 51
+            },
+            "service": "Advanced Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create a Gold Sun Stone Ring",
+        "output": "Gold Sun Stone Ring",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Sun Stone",
+                    "amount": 1
+                },
+                {
+                    "name": "Gold Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 53
+            },
+            "service": "Advanced Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create  an Amulet of Animal Kingdom",
+        "output": "an Amulet of Animal Kingdom",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Beaver Trinket",
+                    "amount": 1
+                },
+                {
+                    "name": "Gold Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Silver Bar",
+                    "amount": 1
+                },
+                {
+                    "name": "Heron Trinket",
+                    "amount": 1
+                },
+                {
+                    "name": "Shrimp Trinket",
+                    "amount": 1
+                },
+                {
+                    "name": "Eel Trinket",
+                    "amount": 1
+                },
+                {
+                    "name": "Bat Trinket",
+                    "amount": 1
+                },
+                {
+                    "name": "Shark Tooth Trinket",
+                    "amount": 1
+                },
+                {
+                    "name": "Lucky Rabbit Foot Trinket",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 55
+            },
+            "service": "Advanced Trinketry Bench"
+        }
+    },
+    {
+        "name": "Create a Gold Ethernite Ring",
+        "output": "Gold Ethernite Ring",
+        "requirements": {
+            "materials": [
+                {
+                    "name": "Ethernite",
+                    "amount": 1
+                },
+                {
+                    "name": "Gold Bar",
+                    "amount": 1
+                }
+            ],
+            "profession": {
+                "name": "Trinketry",
+                "level": 57
+            },
+            "service": "Advanced Trinketry Bench"
         }
     }
 ]
