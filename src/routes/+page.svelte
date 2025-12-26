@@ -9,7 +9,7 @@
   let stageRef: any;
   let scale = 1;
   let stagePos = { x: 0, y: 0 };
-  let stageContainer: HTMLDivElement;
+  let stageContainer: HTMLButtonElement;
   let stageOffset = { x: 0, y: 0 }; // Track stage position for zoom centering
   let isDragging = false;
   let dragStartPos = { x: 0, y: 0 };
@@ -135,6 +135,21 @@
     ).join(' ');
   }
 
+  // Function to get material availability info
+  function getMaterialAvailability(materialName: string, amount: number, inventory: Record<string, { normal: number; fine: number }>) {
+    const inventoryName = recipeNameToInventoryName(materialName);
+    const available = inventory[inventoryName] || { normal: 0, fine: 0 };
+    
+    return {
+      normal: available.normal,
+      fine: available.fine,
+      canCraftNormal: available.normal >= amount,
+      canCraftFine: available.fine >= amount,
+      shortageNormal: Math.max(0, amount - available.normal),
+      shortageFine: Math.max(0, amount - available.fine)
+    };
+  }
+
   // Function to convert recipe name to inventory snake_case format
   function recipeNameToInventoryName(recipeName: string): string {
     return recipeName.toLowerCase().replace(/\s+/g, '_');
@@ -224,18 +239,19 @@
   // Calculate crafting times for all recipes
   $: recipesWithCraftingInfo = sortedGroupedRecipes && Object.keys(sortedGroupedRecipes).reduce((acc: Record<string, any[]>, profession) => {
     acc[profession] = sortedGroupedRecipes[profession].map((recipe: any) => {
-      const inventoryMap = inventoryItems.reduce((map: Record<string, { normal: number; fine: number }>, item) => {
-        const snakeCaseName = recipeNameToInventoryName(item.name);
-        map[snakeCaseName] = { normal: item.normalQuantity, fine: item.fineQuantity };
-        return map;
-      }, {});
+      const inventoryMap: Record<string, { normal: number; fine: number }> = {};
+    inventoryItems.forEach(item => {
+      const snakeCaseName = recipeNameToInventoryName(item.name);
+      inventoryMap[snakeCaseName] = { normal: item.normalQuantity, fine: item.fineQuantity };
+    });
       
       const craftingTimes = calculateCraftingTimes(recipe, inventoryMap);
       
       return {
         ...recipe,
         craftingTimes,
-        canCraft: craftingTimes.normal > 0 || craftingTimes.fine > 0
+        canCraft: craftingTimes.normal > 0 || craftingTimes.fine > 0,
+        inventoryMap // Pass inventoryMap to template
       };
     });
     return acc;
@@ -298,6 +314,40 @@
 
   function handleMouseUp() {
     isDragging = false;
+  }
+
+  function handleKeyDown(e: KeyboardEvent) {
+    if (!stageRef) return;
+    
+    const step = 10;
+    switch(e.key) {
+      case 'ArrowUp':
+        e.preventDefault();
+        stageOffset.y += step;
+        break;
+      case 'ArrowDown':
+        e.preventDefault();
+        stageOffset.y -= step;
+        break;
+      case 'ArrowLeft':
+        e.preventDefault();
+        stageOffset.x += step;
+        break;
+      case 'ArrowRight':
+        e.preventDefault();
+        stageOffset.x -= step;
+        break;
+      case '+':
+      case '=':
+        e.preventDefault();
+        handleZoom(1.1);
+        break;
+      case '-':
+      case '_':
+        e.preventDefault();
+        handleZoom(0.9);
+        break;
+    }
   }
 
   // Canvas action to draw icons
@@ -377,7 +427,7 @@
     </div>
     
     <!-- Recipe Canvas -->
-    <div bind:this={stageContainer} on:wheel={handleNativeWheel} on:mousedown={handleMouseDown} class="recipe-canvas">
+    <button bind:this={stageContainer} on:wheel={handleNativeWheel} on:mousedown={handleMouseDown} on:keydown={handleKeyDown} class="recipe-canvas" aria-label="Recipe planning canvas">
       <Stage 
         bind:this={stageRef}
         width={window.innerWidth - 320} 
@@ -410,14 +460,14 @@
           
           <!-- Recipes for this profession -->
           {#each professionRecipes as recipe, recipeIndex}
-            {@const recipeY = 60 + recipeIndex * 80}
+            {@const recipeY = 60 + recipeIndex * 120}
             <Group x={0} y={recipeY}>
               <!-- Recipe card background with green border if craftable -->
               <Rect 
                 x={0} 
                 y={0} 
                 width={400} 
-                height={70} 
+                height={110} 
                 fill="lightgrey" 
                 stroke={recipe.canCraft ? "#4CAF50" : "black"} 
                 strokeWidth={recipe.canCraft ? 3 : 1} 
@@ -458,24 +508,34 @@
                 <!-- Materials -->
                 <Group x={0} y={45}>
                   <Text text="Materials:" x={0} y={0} fontSize={10} fontWeight="bold" />
-                  {#each recipe.requirements.materials as material, matIndex}
-                    {@const matX = matIndex * 80}
-                    <Group x={matX} y={10}>
-                      {#if typedIcons.materials[material.name]}
-                        {@const matIcon = loadedImages[typedIcons.materials[material.name]]}
-                        {#if matIcon}
-                          <Image
-                            image={matIcon}
-                            x={0}
-                            y={0}
-                            width={20}
-                            height={20}
-                          />
+                  {#if recipe.requirements && recipe.requirements.materials && recipe.requirements.materials.length > 0}
+                    {#each recipe.requirements.materials as material, matIndex}
+                      {@const matX = matIndex * 120}
+                      {@const availability = getMaterialAvailability(material.name, material.amount, recipe.inventoryMap)}
+                      <Group x={matX} y={10}>
+                        {#if typedIcons.materials[material.name]}
+                          {@const matIcon = loadedImages[typedIcons.materials[material.name]]}
+                          {#if matIcon}
+                            <Image
+                              image={matIcon}
+                              x={0}
+                              y={0}
+                              width={20}
+                              height={20}
+                            />
+                          {/if}
                         {/if}
-                      {/if}
-                      <Text text={`${material.amount}x`} x={0} y={22} fontSize={8} textAnchor="middle" />
-                    </Group>
-                  {/each}
+                        <Text text={material.name} x={0} y={22} fontSize={7} textAnchor="middle" />
+                        <Text text={`x${material.amount}`} x={0} y={30} fontSize={7} textAnchor="middle" fontWeight="bold" />
+                        <Text text={`have ${availability.normal}N / ${availability.fine}F`} x={0} y={37} fontSize={6} textAnchor="middle" 
+                          fill={availability.canCraftNormal ? "#4CAF50" : availability.canCraftFine ? "#2196F3" : "#F44336"} />
+                      </Group>
+                    {/each}
+                  {:else if recipe.requirements && recipe.requirements.materials && recipe.requirements.materials.length === 0}
+                    <Text text="No materials defined" x={0} y={15} fontSize={8} fill="#999" />
+                  {:else}
+                    <Text text="No materials property" x={0} y={15} fontSize={8} fill="#999" />
+                  {/if}
                 </Group>
               </Group>
               
@@ -488,7 +548,7 @@
       {/each}
     </Layer>
   </Stage>
-    </div>
+    </button>
   </div>
 {/if}
 
