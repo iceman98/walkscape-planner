@@ -319,6 +319,41 @@
     isDragging = false;
   }
 
+  function handleZoom(scaleFactor: number) {
+    if (!stageRef) return;
+    
+    const oldScale = stageRef.scaleX();
+    const newScale = oldScale * scaleFactor;
+    
+    // Limit scale
+    if (newScale < 0.5 || newScale > 5) return;
+    
+    // Get stage center position
+    const stageCenterX = stageRef.width() / 2;
+    const stageCenterY = stageRef.height() / 2;
+    
+    // Calculate the new position to keep the center fixed
+    const mousePointTo = {
+      x: (stageCenterX - stageRef.x()) / oldScale,
+      y: (stageCenterY - stageRef.y()) / oldScale,
+    };
+
+    const newPos = {
+      x: stageCenterX - mousePointTo.x * newScale,
+      y: stageCenterY - mousePointTo.y * newScale,
+    };
+
+    // Apply the new scale and position
+    stageRef.scaleX(newScale);
+    stageRef.scaleY(newScale);
+    stageRef.x(newPos.x);
+    stageRef.y(newPos.y);
+    stageRef.batchDraw();
+    
+    // Update the scale variable for Svelte reactivity
+    scale = newScale;
+  }
+
   function handleKeyDown(e: KeyboardEvent) {
     if (!stageRef) return;
     
