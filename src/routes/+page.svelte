@@ -1,24 +1,48 @@
 <script lang="ts">
   import { browser } from "$app/environment";
   import { Stage, Layer, Group, Text, Rect, Image } from "svelte-konva";
+  import "../lib/constants.css";
 
   import character from "../data/character.json";
   import recipes from "../data/recipes.json";
   import icons from "../lib/assets/icons.json";
+  import { 
+    UI_CONSTANTS, 
+    COLORS, 
+    FONT_SIZES, 
+    SPACING, 
+    ANIMATIONS, 
+    STORAGE_KEYS, 
+    SKILL_LEVELS 
+  } from "../lib/constants";
 
-  // Skill experience table (level -> required XP)
-  const skillLevels: Record<number, number> = {
-    1: 0, 2: 83, 3: 174, 4: 276, 5: 388, 6: 512, 7: 650, 8: 801, 9: 969, 10: 1154,
-    11: 1358, 12: 1584, 13: 1833, 14: 2107, 15: 2411, 16: 2746, 17: 3115, 18: 3523, 19: 3973, 20: 4470,
-    21: 5018, 22: 5624, 23: 6291, 24: 7028, 25: 7842, 26: 8740, 27: 9730, 28: 10824, 29: 12031, 30: 13363,
-    31: 14833, 32: 16456, 33: 18247, 34: 20224, 35: 22406, 36: 24815, 37: 27473, 38: 30408, 39: 33648, 40: 37224,
-    41: 41171, 42: 45529, 43: 50339, 44: 55649, 45: 61512, 46: 67983, 47: 75127, 48: 83014, 49: 91721, 50: 101333,
-    51: 111945, 52: 123660, 53: 136594, 54: 150872, 55: 166636, 56: 184040, 57: 203254, 58: 224466, 59: 247886, 60: 273742,
-    61: 302288, 62: 333804, 63: 368599, 64: 407015, 65: 449428, 66: 496254, 67: 547953, 68: 605032, 69: 668051, 70: 737627,
-    71: 814445, 72: 899257, 73: 992895, 74: 1096278, 75: 1210421, 76: 1336443, 77: 1475581, 78: 1629200, 79: 1798808, 80: 1986068,
-    81: 2192818, 82: 2421087, 83: 2673114, 84: 2951373, 85: 3258594, 86: 3597792, 87: 3972294, 88: 4385776, 89: 4842295, 90: 5346332,
-    91: 5902831, 92: 6517253, 93: 7195629, 94: 7944614, 95: 8771558, 96: 9684577, 97: 10692629, 98: 11805606, 99: 13034431
-  };
+  // Load character from localStorage or use default
+  let characterData = character;
+  let showImportDialog = false;
+  let importText = "";
+  let importError = "";
+
+  // Load saved character from localStorage on mount
+  if (typeof window !== 'undefined') {
+    const savedCharacter = localStorage.getItem(STORAGE_KEYS.CHARACTER);
+    if (savedCharacter) {
+      try {
+        characterData = JSON.parse(savedCharacter);
+      } catch (e) {
+        console.error('Error loading saved character:', e);
+      }
+    }
+  }
+
+  // Function to convert XP to level
+  function xpToLevel(xp: number): number {
+    for (let level = 99; level >= 1; level--) {
+      if (xp >= SKILL_LEVELS[level]) {
+        return level;
+      }
+    }
+    return 1;
+  }
 
   let stageRef: any;
   let scale = 1;
@@ -136,20 +160,50 @@
     return acc;
   }, {});
 
-  // Function to convert XP to level
-  function xpToLevel(xp: number): number {
-    for (let level = 99; level >= 1; level--) {
-      if (xp >= skillLevels[level]) {
-        return level;
-      }
-    }
-    return 1;
-  }
-
   // Function to get character skill level
   function getSkillLevel(skillName: string): number {
-    const skillXp = character.skills[skillName as keyof typeof character.skills] || 0;
+    const skillXp = characterData.skills[skillName as keyof typeof characterData.skills] || 0;
     return xpToLevel(skillXp);
+  }
+
+  // Import character JSON
+  function importCharacter() {
+    importError = "";
+    try {
+      const newCharacter = JSON.parse(importText);
+      
+      // Validate basic structure
+      if (!newCharacter.skills || typeof newCharacter.skills !== 'object') {
+        importError = "El JSON debe contener un objeto 'skills'";
+        return;
+      }
+      
+      if (!newCharacter.inventory || typeof newCharacter.inventory !== 'object') {
+        importError = "El JSON debe contener un objeto 'inventory'";
+        return;
+      }
+      
+      // Save to localStorage
+      if (typeof window !== 'undefined') {
+        localStorage.setItem(STORAGE_KEYS.CHARACTER, JSON.stringify(newCharacter));
+      }
+      
+      // Update character data and trigger re-render
+      characterData = newCharacter;
+      showImportDialog = false;
+      importText = "";
+      
+    } catch (e) {
+      importError = "JSON inválido. Por favor, verifica el formato.";
+    }
+  }
+
+  // Reset to default character
+  function resetCharacter() {
+    characterData = character;
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem(STORAGE_KEYS.CHARACTER);
+    }
   }
 
   // Function to normalize item names to match icons.json
@@ -228,96 +282,108 @@
     };
   }
 
-  // Get inventory items as array (including bank)
-  $: inventoryItems = (() => {
-    const allItems: Record<string, { normal: number; fine: number }> = {};
+// Get inventory items as array (including bank)
+$: inventoryItems = (() => {
+  const allItems: Record<string, { normalQuantity: number; fineQuantity: number; icon: any; hasFine: boolean }> = {};
+  
+  // Process inventory items
+  Object.entries(characterData.inventory).forEach(([name, quantity]) => {
+    let baseName = name;
+    let fineQuantity = 0;
+    let normalQuantity = quantity;
     
-    // Process inventory items
-    Object.entries(character.inventory).forEach(([name, quantity]) => {
+    // Check if this is a fine quality item
+    if (name.endsWith('_fine')) {
+      baseName = name.slice(0, -5); // Remove '_fine'
+      fineQuantity = quantity;
+      normalQuantity = 0;
+    }
+    
+    const normalizedName = normalizeItemName(baseName);
+    
+    if (allItems[normalizedName]) {
+      allItems[normalizedName].normalQuantity += normalQuantity;
+      allItems[normalizedName].fineQuantity += fineQuantity;
+    } else {
+      allItems[normalizedName] = {
+        normalQuantity,
+        fineQuantity,
+        icon: typedIcons.materials[normalizedName],
+        hasFine: fineQuantity > 0
+      };
+    }
+  });
+  
+  // Process bank items
+  if (characterData.bank) {
+    Object.entries(characterData.bank).forEach(([name, quantity]) => {
       let baseName = name;
-      let isFine = false;
+      let fineQuantity = 0;
+      let normalQuantity = quantity;
       
+      // Check if this is a fine quality item
       if (name.endsWith('_fine')) {
         baseName = name.slice(0, -5); // Remove '_fine'
-        isFine = true;
+        fineQuantity = quantity;
+        normalQuantity = 0;
       }
       
-      if (!allItems[baseName]) {
-        allItems[baseName] = { normal: 0, fine: 0 };
-      }
-      
-      if (isFine) {
-        allItems[baseName].fine += quantity;
-      } else {
-        allItems[baseName].normal += quantity;
-      }
-    });
-    
-    // Process bank items
-    Object.entries(character.bank).forEach(([name, quantity]) => {
-      let baseName = name;
-      let isFine = false;
-      
-      if (name.endsWith('_fine')) {
-        baseName = name.slice(0, -5); // Remove '_fine'
-        isFine = true;
-      }
-      
-      if (!allItems[baseName]) {
-        allItems[baseName] = { normal: 0, fine: 0 };
-      }
-      
-      if (isFine) {
-        allItems[baseName].fine += quantity;
-      } else {
-        allItems[baseName].normal += quantity;
-      }
-    });
-    
-    return Object.entries(allItems).map(([baseName, quantities]) => {
       const normalizedName = normalizeItemName(baseName);
       
-      return {
-        name: normalizedName,
-        normalQuantity: quantities.normal,
-        fineQuantity: quantities.fine,
-        icon: typedIcons.materials[normalizedName],
-        hasFine: quantities.fine > 0
-      };
+      if (allItems[normalizedName]) {
+        allItems[normalizedName].normalQuantity += normalQuantity;
+        allItems[normalizedName].fineQuantity += fineQuantity;
+      } else {
+        allItems[normalizedName] = {
+          normalQuantity,
+          fineQuantity,
+          icon: typedIcons.materials[normalizedName],
+          hasFine: fineQuantity > 0
+        };
+      }
     });
-  })();
+  }
+  
+  // Convert to array and sort by name
+  return Object.entries(allItems)
+    .map(([name, quantities]) => ({
+      name,
+      ...quantities
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+})();
 
-  // Calculate crafting times for all recipes
-  $: recipesWithCraftingInfo = sortedGroupedRecipes && Object.keys(sortedGroupedRecipes).reduce((acc: Record<string, any[]>, profession) => {
-    acc[profession] = sortedGroupedRecipes[profession].map((recipe: any) => {
-      const inventoryMap: Record<string, { normal: number; fine: number }> = {};
-      inventoryItems.forEach(item => {
-        const snakeCaseName = recipeNameToInventoryName(item.name);
-        inventoryMap[snakeCaseName] = { normal: item.normalQuantity, fine: item.fineQuantity };
-      });
-      
-      const craftingTimes = calculateCraftingTimes(recipe, inventoryMap);
-      
-      return {
-        ...recipe,
-        craftingTimes,
-        canCraft: craftingTimes.normal > 0 || craftingTimes.fine > 0,
-        inventoryMap // Pass inventoryMap to template
-      };
-    }).filter((recipe: any) => {
-      // Filter recipes based on toggle
-      if (!showOnlyCraftable) return true;
-      return recipe.canCraft && recipe.craftingTimes.missingLevel === 0;
+// Calculate crafting times for all recipes
+$: recipesWithCraftingInfo = sortedGroupedRecipes && Object.keys(sortedGroupedRecipes).reduce((acc: Record<string, any[]>, profession) => {
+  acc[profession] = sortedGroupedRecipes[profession].map((recipe: any) => {
+    const inventoryMap: Record<string, { normal: number; fine: number }> = {};
+    inventoryItems.forEach((item: any) => {
+      const snakeCaseName = recipeNameToInventoryName(item.name);
+      inventoryMap[snakeCaseName] = { normal: item.normalQuantity, fine: item.fineQuantity };
     });
-    return acc;
-  }, {});
+    
+    const craftingTimes = calculateCraftingTimes(recipe, inventoryMap);
+    
+    return {
+      ...recipe,
+      craftingTimes,
+      canCraft: craftingTimes.normal > 0 || craftingTimes.fine > 0,
+      inventoryMap // Pass inventoryMap to template
+    };
+  }).filter((recipe: any) => {
+    // Filter recipes based on toggle
+    if (!showOnlyCraftable) return true;
+    return recipe.canCraft && recipe.craftingTimes.missingLevel === 0;
+  });
+  return acc;
+}, {});
 
   function handleWheel(e: { evt: WheelEvent }) {
     if (!stageRef) return;
     
     e.evt.preventDefault();
     
-    const scaleBy = 1.1;
+    const scaleBy = UI_CONSTANTS.SCALE_FACTOR;
     const oldScale = stageRef.scaleX();
     const pointer = stageRef.getPointerPosition();
     
@@ -327,7 +393,7 @@
     const newScale = e.evt.deltaY > 0 ? oldScale / scaleBy : oldScale * scaleBy;
     
     // Limit scale
-    if (newScale < 0.5 || newScale > 5) return;
+    if (newScale < UI_CONSTANTS.MIN_SCALE || newScale > UI_CONSTANTS.MAX_SCALE) return;
 
     // Calculate the new position to keep the pointer in the same place
     const mousePointTo = {
@@ -454,7 +520,7 @@
     
     e.preventDefault();
     
-    const scaleBy = 1.1;
+    const scaleBy = UI_CONSTANTS.SCALE_FACTOR;
     const oldScale = scale;
     
     // Get mouse position relative to the container
@@ -465,7 +531,7 @@
     const newScale = e.deltaY > 0 ? oldScale / scaleBy : oldScale * scaleBy;
     
     // Limit scale
-    if (newScale < 0.5 || newScale > 5) return;
+    if (newScale < UI_CONSTANTS.MIN_SCALE || newScale > UI_CONSTANTS.MAX_SCALE) return;
     
     // Calculate the offset to keep the mouse position fixed
     const scaleChange = newScale - oldScale;
@@ -483,7 +549,17 @@
   <div class="container">
     <!-- Inventory Panel -->
     <div class="inventory-panel">
-      <h3>Inventario</h3>
+      <div class="panel-header">
+        <h3>Inventario</h3>
+        <div class="panel-buttons">
+          <button class="import-btn" on:click={() => showImportDialog = true}>
+            Importar Personaje
+          </button>
+          <button class="reset-btn" on:click={resetCharacter}>
+            Restablecer
+          </button>
+        </div>
+      </div>
       
       <!-- Toggle for craftable recipes only -->
       <div class="toggle-container">
@@ -534,7 +610,7 @@
     <button bind:this={stageContainer} on:wheel={handleNativeWheel} on:mousedown={handleMouseDown} on:keydown={handleKeyDown} class="recipe-canvas" aria-label="Recipe planning canvas">
       <Stage 
         bind:this={stageRef}
-        width={window.innerWidth - 320} 
+        width={window.innerWidth - UI_CONSTANTS.INVENTORY_PANEL_WIDTH} 
         height={window.innerHeight}
         scaleX={scale}
         scaleY={scale}
@@ -545,39 +621,39 @@
       {#each Object.entries(recipesWithCraftingInfo) as [profession, professionRecipes]}
         <Group x={professionPositions[profession]?.x || 0} y={professionPositions[profession]?.y || 0}>
           <!-- Profession header -->
-          <Rect x={0} y={0} width={280} height={50} fill="lightblue" />
+          <Rect x={0} y={0} width={UI_CONSTANTS.PROFESSION_HEADER_WIDTH} height={UI_CONSTANTS.PROFESSION_HEADER_HEIGHT} fill={COLORS.PROFESSION_HEADER} />
           
           <!-- Profession icon or placeholder -->
           {#if typedIcons.professions[profession] && loadedImages[typedIcons.professions[profession]]}
             {@const professionIcon = loadedImages[typedIcons.professions[profession]]}
             <Image
               image={professionIcon}
-              x={10}
-              y={10}
-              width={30}
-              height={30}
+              x={UI_CONSTANTS.PROFESSION_ICON_MARGIN}
+              y={UI_CONSTANTS.PROFESSION_ICON_MARGIN}
+              width={UI_CONSTANTS.PROFESSION_ICON_SIZE}
+              height={UI_CONSTANTS.PROFESSION_ICON_SIZE}
             />
           {:else}
             <!-- Placeholder circle when no icon is available -->
-            <Rect x={10} y={10} width={30} height={30} fill="#4a90e2" rx={5} />
-            <Text text={profession.charAt(0)} x={25} y={28} color="white" fontSize={16} textAnchor="middle" fontWeight="bold" />
+            <Rect x={UI_CONSTANTS.PROFESSION_ICON_MARGIN} y={UI_CONSTANTS.PROFESSION_ICON_MARGIN} width={UI_CONSTANTS.PROFESSION_ICON_SIZE} height={UI_CONSTANTS.PROFESSION_ICON_SIZE} fill={COLORS.PLACEHOLDER_BACKGROUND} rx={5} />
+            <Text text={profession.charAt(0)} x={SPACING.PLACEHOLDER_TEXT_X} y={SPACING.PLACEHOLDER_TEXT_Y} color={COLORS.TEXT_WHITE} fontSize={FONT_SIZES.PROFESSION_HEADER} textAnchor="middle" fontWeight="bold" />
           {/if}
           
-          <Text text={profession} x={45} y={15} color="white" fontSize={18} />
+          <Text text={profession} x={SPACING.PROFESSION_TEXT_X} y={SPACING.PROFESSION_TEXT_Y} color={COLORS.TEXT_WHITE} fontSize={FONT_SIZES.PROFESSION_HEADER} />
           
           <!-- Recipes for this profession -->
           {#each professionRecipes as recipe, recipeIndex}
-            {@const recipeY = 60 + recipeIndex * 120}
+            {@const recipeY = UI_CONSTANTS.PROFESSION_HEADER_HEIGHT + recipeIndex * UI_CONSTANTS.RECIPE_CARD_SPACING}
             <Group x={0} y={recipeY}>
               <!-- Recipe card background with different border colors -->
               <Rect 
                 x={0} 
                 y={0} 
-                width={380} 
-                height={110} 
-                fill="lightgrey" 
-                stroke={recipe.craftingTimes.missingLevel > 0 ? "#FF9800" : recipe.canCraft ? "#4CAF50" : "black"} 
-                strokeWidth={recipe.craftingTimes.missingLevel > 0 || recipe.canCraft ? 3 : 1} 
+                width={UI_CONSTANTS.RECIPE_CARD_WIDTH} 
+                height={UI_CONSTANTS.RECIPE_CARD_HEIGHT} 
+                fill={COLORS.RECIPE_CARD_BACKGROUND} 
+                stroke={recipe.craftingTimes.missingLevel > 0 ? COLORS.BORDER_MISSING_LEVEL : recipe.canCraft ? COLORS.BORDER_CRAFTABLE : COLORS.BORDER_DEFAULT} 
+                strokeWidth={recipe.craftingTimes.missingLevel > 0 || recipe.canCraft ? COLORS.BORDER_WIDTH_CRAFTABLE : COLORS.BORDER_WIDTH_DEFAULT} 
               />
               
               <!-- Recipe output icon -->
@@ -586,73 +662,72 @@
                 {#if outputIcon}
                   <Image
                     image={outputIcon}
-                    x={10}
-                    y={15}
-                    width={40}
-                    height={40}
+                    x={UI_CONSTANTS.OUTPUT_ICON_MARGIN}
+                    y={UI_CONSTANTS.OUTPUT_ICON_MARGIN}
+                    width={UI_CONSTANTS.OUTPUT_ICON_SIZE}
+                    height={UI_CONSTANTS.OUTPUT_ICON_SIZE}
                   />
                 {/if}
               {/if}
               
               <!-- Recipe info -->
-              <Group x={60} y={5}>
-                <Text text={recipe.name} x={0} y={0} fontSize={12} fontWeight="bold" />
-                <Text text={`Output: ${recipe.output}`} x={0} y={15} fontSize={10} />
+              <Group x={SPACING.RECIPE_INFO_X} y={SPACING.RECIPE_INFO_Y}>
+                <Text text={recipe.output} x={0} y={SPACING.RECIPE_NAME_Y} fontSize={FONT_SIZES.RECIPE_NAME} />
+                <Text text="x1" x={0} y={SPACING.RECIPE_AMOUNT_Y} fontSize={FONT_SIZES.RECIPE_OUTPUT} />
                 
                 <!-- Crafting times -->
-                <Group x={0} y={30}>
+                <Group y={SPACING.CRAFTING_TIMES_Y}>
                   {#if recipe.craftingTimes.missingLevel > 0}
-                    <Text text={`Need Lv${recipe.craftingTimes.missingLevel + getSkillLevel(recipe.requirements.profession.name.toLowerCase())} more`} x={0} y={0} fontSize={9} fill="#FF9800" />
+                    <Text text={`Need Lv${recipe.craftingTimes.missingLevel + getSkillLevel(recipe.requirements.profession.name.toLowerCase())} more`} x={SPACING.CRAFTING_STATUS_X_LEFT} y={0} fontSize={FONT_SIZES.CRAFTING_STATUS} fill={COLORS.CRAFTING_MISSING_LEVEL} />
                   {:else if recipe.craftingTimes.normal > 0}
-                    <Text text={`Normal: x${recipe.craftingTimes.normal}`} x={0} y={0} fontSize={9} fill="#4CAF50" />
+                    <Text text={`Normal: x${recipe.craftingTimes.normal}`} x={SPACING.CRAFTING_STATUS_X_LEFT} y={0} fontSize={FONT_SIZES.CRAFTING_STATUS} fill={COLORS.CRAFTING_NORMAL} />
                   {/if}
                   {#if recipe.craftingTimes.missingLevel > 0}
-                    <Text text={`Current: Lv${getSkillLevel(recipe.requirements.profession.name.toLowerCase())}`} x={80} y={0} fontSize={9} fill="#9C27B0" />
+                    <Text text={`Current: Lv${getSkillLevel(recipe.requirements.profession.name.toLowerCase())}`} x={SPACING.CRAFTING_STATUS_X_RIGHT} y={0} fontSize={FONT_SIZES.CRAFTING_STATUS} fill={COLORS.CRAFTING_CURRENT_LEVEL} />
                   {:else if recipe.craftingTimes.fine > 0}
-                    <Text text={`Fine: x${recipe.craftingTimes.fine}`} x={80} y={0} fontSize={9} fill="#2196F3" />
+                    <Text text={`Fine: x${recipe.craftingTimes.fine}`} x={SPACING.CRAFTING_STATUS_X_RIGHT} y={0} fontSize={FONT_SIZES.CRAFTING_STATUS} fill={COLORS.CRAFTING_FINE} />
                   {/if}
                   {#if recipe.craftingTimes.missingLevel === 0 && recipe.craftingTimes.normal === 0 && recipe.craftingTimes.fine === 0}
-                    <Text text="No materials" x={0} y={0} fontSize={9} fill="#F44336" />
+                    <Text text="No materials" x={SPACING.CRAFTING_STATUS_X_LEFT} y={0} fontSize={FONT_SIZES.CRAFTING_STATUS} fill={COLORS.CRAFTING_NO_MATERIALS} />
                   {/if}
                 </Group>
                 
                 <!-- Materials -->
-                <Group x={0} y={45}>
-                  <Text text="Materials:" x={0} y={0} fontSize={10} fontWeight="bold" />
-                  {#if recipe.requirements && recipe.requirements.materials && recipe.requirements.materials.length > 0}
-                    {#each recipe.requirements.materials as material, matIndex}
-                      {@const matX = matIndex * 120}
-                      {@const availability = getMaterialAvailability(material.name, material.amount, recipe.inventoryMap)}
-                      <Group x={matX} y={10}>
+                <Group y={SPACING.MATERIALS_Y}>
+                  {#if recipe.requirements.materials && recipe.requirements.materials.length > 0}
+                    {#each recipe.requirements.materials as material, materialIndex}
+                      {@const materialX = materialIndex * UI_CONSTANTS.MATERIAL_ICON_SPACING}
+                      {@const availability = recipe.inventoryMap[recipeNameToInventoryName(material.name)] || { normal: 0, fine: 0 }}
+                      <Group x={materialX} y={SPACING.MATERIAL_Y_OFFSET}>
                         {#if typedIcons.materials[material.name]}
-                          {@const matIcon = loadedImages[typedIcons.materials[material.name]]}
-                          {#if matIcon}
+                          {@const materialIcon = loadedImages[typedIcons.materials[material.name]]}
+                          {#if materialIcon}
                             <Image
-                              image={matIcon}
+                              image={materialIcon}
                               x={0}
                               y={0}
-                              width={20}
-                              height={20}
+                              width={UI_CONSTANTS.MATERIAL_ICON_SIZE}
+                              height={UI_CONSTANTS.MATERIAL_ICON_SIZE}
                             />
                           {/if}
                         {/if}
-                        <Text text={material.name} x={0} y={22} fontSize={7} textAnchor="middle" />
-                        <Text text={`x${material.amount}`} x={0} y={30} fontSize={7} textAnchor="middle" fontWeight="bold" />
-                        <Text text={`have ${availability.normal}N / ${availability.fine}F`} x={0} y={37} fontSize={6} textAnchor="middle" 
-                          fill={availability.canCraftNormal ? "#4CAF50" : availability.canCraftFine ? "#2196F3" : "#F44336"} />
+                        <Text text={material.name} x={0} y={SPACING.MATERIAL_TEXT_Y} fontSize={FONT_SIZES.MATERIAL_NAME} textAnchor="middle" />
+                        <Text text={`x${material.amount}`} x={0} y={SPACING.MATERIAL_AMOUNT_Y} fontSize={FONT_SIZES.MATERIAL_AMOUNT} textAnchor="middle" fontWeight="bold" />
+                        <Text text={`have ${availability.normal}N / ${availability.fine}F`} x={0} y={SPACING.MATERIAL_AVAILABILITY_Y} fontSize={FONT_SIZES.MATERIAL_AVAILABILITY} textAnchor="middle" 
+                              fill={availability.normal >= material.amount ? COLORS.AVAILABILITY_CAN_CRAFT : availability.fine >= material.amount ? COLORS.AVAILABILITY_CAN_CRAFT_FINE : COLORS.AVAILABILITY_CANNOT_CRAFT} />
                       </Group>
                     {/each}
-                  {:else if recipe.requirements && recipe.requirements.materials && recipe.requirements.materials.length === 0}
-                    <Text text="No materials defined" x={0} y={15} fontSize={8} fill="#999" />
+                  {:else if recipe.requirements.materials}
+                    <Text text="No materials defined" x={0} y={SPACING.MATERIAL_Y_OFFSET} fontSize={FONT_SIZES.MATERIAL_NAME} fill="#999" />
                   {:else}
-                    <Text text="No materials property" x={0} y={15} fontSize={8} fill="#999" />
+                    <Text text="No materials property" x={0} y={SPACING.MATERIAL_Y_OFFSET} fontSize={FONT_SIZES.MATERIAL_NAME} fill="#999" />
                   {/if}
                 </Group>
               </Group>
               
               <!-- Level indicator -->
-              <Rect x={350} y={5} width={40} height={20} fill="orange" />
-              <Text text={`Lv${recipe.requirements.profession.level}`} x={370} y={18} fontSize={10} textAnchor="middle" color="white" />
+              <Rect x={UI_CONSTANTS.LEVEL_INDICATOR_X} y={UI_CONSTANTS.LEVEL_INDICATOR_Y} width={UI_CONSTANTS.LEVEL_INDICATOR_WIDTH} height={UI_CONSTANTS.LEVEL_INDICATOR_HEIGHT} fill={COLORS.LEVEL_INDICATOR_BACKGROUND} />
+              <Text text={`Lv${recipe.requirements.profession.level}`} x={SPACING.LEVEL_TEXT_X} y={SPACING.LEVEL_TEXT_Y} fontSize={FONT_SIZES.LEVEL_INDICATOR} textAnchor="middle" color={COLORS.LEVEL_INDICATOR_TEXT} />
             </Group>
           {/each}
         </Group>
@@ -660,6 +735,50 @@
     </Layer>
   </Stage>
     </button>
+    
+    <!-- Import Dialog -->
+    {#if showImportDialog}
+      <div 
+        class="dialog-overlay" 
+        role="button" 
+        tabindex="0"
+        on:click={(e) => {
+          if (e.target === e.currentTarget) {
+            showImportDialog = false;
+          }
+        }}
+        on:keydown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            showImportDialog = false;
+          }
+        }}
+        aria-label="Close dialog"
+      >
+        <div class="dialog-content" role="dialog" aria-modal="true" aria-labelledby="import-dialog-title" tabindex="-1">
+          <h3 id="import-dialog-title">Importar Personaje</h3>
+          <p>Pega el JSON de tu personaje de Walkscape:</p>
+          <textarea 
+            bind:value={importText} 
+            class="import-textarea"
+            placeholder="Pega aqui el JSON de tu personaje..."
+          ></textarea>
+          
+          {#if importError}
+            <div class="error-message">{importError}</div>
+          {/if}
+          
+          <div class="dialog-buttons">
+            <button class="cancel-btn" on:click={() => showImportDialog = false}>
+              Cancelar
+            </button>
+            <button class="import-confirm-btn" on:click={importCharacter}>
+              Importar
+            </button>
+          </div>
+        </div>
+      </div>
+    {/if}
   </div>
 {/if}
 
@@ -670,34 +789,73 @@
   }
 
   .inventory-panel {
-    width: 300px;
+    width: var(--inventory-panel-width);
     background: #f5f5f5;
     border-right: 1px solid #ccc;
     overflow-y: auto;
-    padding: 20px;
+    padding: var(--container-padding);
   }
 
   .inventory-panel h3 {
-    margin: 0 0 20px 0;
-    color: #333;
-    font-size: 18px;
+    margin: 0 0 var(--panel-margin-bottom) 0;
+    color: var(--text-primary);
+    font-size: var(--panel-title-font-size);
     font-weight: bold;
   }
 
+  .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--panel-margin-bottom);
+  }
+
+  .panel-buttons {
+    display: flex;
+    gap: var(--button-gap);
+  }
+
+  .import-btn, .reset-btn {
+    padding: var(--button-padding-small);
+    border: none;
+    border-radius: var(--button-border-radius);
+    font-size: var(--button-font-size-small);
+    cursor: pointer;
+    transition: background-color var(--button-hover-duration);
+  }
+
+  .import-btn {
+    background-color: var(--button-import);
+    color: white;
+  }
+
+  .import-btn:hover {
+    background-color: var(--button-import-hover);
+  }
+
+  .reset-btn {
+    background-color: var(--button-reset);
+    color: white;
+  }
+
+  .reset-btn:hover {
+    background-color: var(--button-reset-hover);
+  }
+
   .toggle-container {
-    margin-bottom: 20px;
-    padding: 12px;
-    background: #f8f9fa;
+    margin-bottom: var(--toggle-margin-bottom);
+    padding: var(--toggle-padding);
+    background: var(--toggle-container);
     border-radius: 8px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--toggle-border);
   }
 
   .toggle-label {
     display: flex;
     align-items: center;
     cursor: pointer;
-    font-size: 14px;
-    color: #333;
+    font-size: var(--toggle-text-font-size);
+    color: var(--text-primary);
   }
 
   .toggle-input {
@@ -706,12 +864,12 @@
 
   .toggle-slider {
     position: relative;
-    width: 44px;
+    width: 50px;
     height: 24px;
-    background: #ccc;
-    border-radius: 12px;
+    background: var(--toggle-background);
+    border-radius: 24px;
     margin-right: 10px;
-    transition: background 0.3s ease;
+    transition: background-color var(--toggle-transition-duration);
   }
 
   .toggle-slider::before {
@@ -723,16 +881,15 @@
     height: 20px;
     background: white;
     border-radius: 50%;
-    transition: transform 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: transform var(--toggle-transition-duration);
   }
 
-  .toggle-input:checked + .toggle-slider {
-    background: #4CAF50;
+  .toggle-input:checked ~ .toggle-slider {
+    background: var(--toggle-active);
   }
 
-  .toggle-input:checked + .toggle-slider::before {
-    transform: translateX(20px);
+  .toggle-input:checked ~ .toggle-slider::before {
+    transform: translateX(26px);
   }
 
   .toggle-text {
@@ -814,5 +971,102 @@
   .recipe-canvas {
     flex: 1;
     position: relative;
+  }
+
+  /* Dialog styles */
+  .dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  .dialog-content {
+    background: white;
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .dialog-content h3 {
+    margin: 0 0 var(--dialog-margin-bottom) 0;
+    color: var(--text-primary);
+    font-size: var(--dialog-title-font-size);
+    font-weight: bold;
+  }
+
+  .dialog-content p {
+    margin: 0 0 var(--dialog-margin-bottom) 0;
+    color: var(--text-secondary);
+    font-size: var(--dialog-text-font-size);
+  }
+
+  .import-textarea {
+    width: 100%;
+    height: var(--textarea-height);
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: var(--textarea-font-size);
+    resize: vertical;
+    margin-bottom: var(--dialog-margin-bottom);
+  }
+
+  .import-textarea:focus {
+    outline: none;
+    border-color: var(--button-import);
+  }
+
+  .error-message {
+    background-color: var(--dialog-error-background);
+    color: var(--dialog-error-text);
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: var(--dialog-margin-bottom);
+    font-size: var(--error-message-font-size);
+  }
+
+  .dialog-buttons {
+    display: flex;
+    gap: var(--dialog-button-gap);
+    justify-content: flex-end;
+  }
+
+  .cancel-btn, .import-confirm-btn {
+    padding: var(--button-padding-normal);
+    border: none;
+    border-radius: var(--button-border-radius);
+    font-size: var(--button-font-size-normal);
+    cursor: pointer;
+    transition: background-color var(--button-hover-duration);
+  }
+
+  .cancel-btn {
+    background-color: var(--button-cancel);
+    color: var(--text-secondary);
+  }
+
+  .cancel-btn:hover {
+    background-color: var(--button-cancel-hover);
+  }
+
+  .import-confirm-btn {
+    background-color: var(--button-import);
+    color: white;
+  }
+
+  .import-confirm-btn:hover {
+    background-color: var(--button-import-hover);
   }
 </style>

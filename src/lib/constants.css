@@ -1,0 +1,136 @@
+/* CSS Constants derived from TypeScript constants */
+
+/* Layout */
+:root {
+  --inventory-panel-width: 300px;
+  --container-padding: 20px;
+  
+  /* Recipe card dimensions */
+  --recipe-card-width: 380px;
+  --recipe-card-height: 110px;
+  --recipe-card-spacing: 120px;
+  
+  /* Profession header */
+  --profession-header-width: 280px;
+  --profession-header-height: 50px;
+  --profession-icon-size: 30px;
+  --profession-icon-margin: 10px;
+  
+  /* Recipe output icon */
+  --output-icon-size: 40px;
+  --output-icon-margin: 10px;
+  
+  /* Material icons */
+  --material-icon-size: 20px;
+  --material-icon-spacing: 120px;
+  
+  /* Level indicator */
+  --level-indicator-width: 40px;
+  --level-indicator-height: 20px;
+  --level-indicator-x: 350px;
+  --level-indicator-y: 5px;
+  
+  /* Grid layout */
+  --profession-columns: 3;
+  --column-width: 400px;
+  --row-height: 600px;
+  --column-spacing: 10px;
+  
+  /* Dialog */
+  --dialog-max-width: 500px;
+  --dialog-padding: 24px;
+  --dialog-z-index: 1000;
+  --textarea-height: 200px;
+  
+  /* Buttons */
+  --button-padding-small: 6px 12px;
+  --button-padding-normal: 8px 16px;
+  --button-border-radius: 4px;
+  --button-font-size-small: 12px;
+  --button-font-size-normal: 14px;
+  
+  /* Colors */
+  --profession-header: lightblue;
+  
+  --recipe-card-background: lightgrey;
+  
+  --level-indicator-background: orange;
+  --level-indicator-text: white;
+  
+  --crafting-normal: #4CAF50;
+  --crafting-fine: #2196F3;
+  --crafting-no-materials: #F44336;
+  --crafting-missing-level: #FF9800;
+  --crafting-current-level: #9C27B0;
+  
+  --availability-can-craft: #4CAF50;
+  --availability-can-craft-fine: #2196F3;
+  --availability-cannot-craft: #F44336;
+  
+  --button-import: #4CAF50;
+  --button-import-hover: #45a049;
+  --button-reset: #f44336;
+  --button-reset-hover: #da190b;
+  --button-cancel: #f5f5f5;
+  --button-cancel-hover: #e0e0e0;
+  
+  --dialog-overlay: rgba(0, 0, 0, 0.5);
+  --dialog-background: white;
+  --dialog-error-background: #ffebee;
+  --dialog-error-text: #c62828;
+  
+  --text-primary: #333;
+  --text-secondary: #666;
+  --text-white: white;
+  
+  --placeholder-background: #4a90e2;
+  
+  --toggle-background: #ccc;
+  --toggle-active: #4CAF50;
+  --toggle-container: #f8f9fa;
+  --toggle-border: #e0e0e0;
+  
+  /* Font sizes */
+  --profession-header-font-size: 18px;
+  --recipe-name-font-size: 12px;
+  --recipe-output-font-size: 10px;
+  --crafting-status-font-size: 9px;
+  --material-name-font-size: 7px;
+  --material-amount-font-size: 7px;
+  --material-availability-font-size: 6px;
+  --level-indicator-font-size: 10px;
+  --dialog-title-font-size: 20px;
+  --dialog-text-font-size: 14px;
+  --textarea-font-size: 12px;
+  --error-message-font-size: 14px;
+  --panel-title-font-size: 18px;
+  --toggle-text-font-size: 14px;
+  
+  /* Margins and spacing */
+  --recipe-info-x: 60px;
+  --recipe-info-y: 5px;
+  --crafting-times-y: 30px;
+  --materials-y: 45px;
+  --material-y-offset: 10px;
+  --material-text-y: 22px;
+  --material-amount-y: 30px;
+  --material-availability-y: 37px;
+  --profession-text-x: 45px;
+  --profession-text-y: 15px;
+  --level-text-x: 370px;
+  --level-text-y: 18px;
+  --placeholder-text-x: 25px;
+  --placeholder-text-y: 28px;
+  
+  --dialog-margin-bottom: 16px;
+  --dialog-button-gap: 12px;
+  
+  --panel-margin-bottom: 20px;
+  --button-gap: 8px;
+  --toggle-margin-bottom: 20px;
+  --toggle-padding: 12px;
+  
+  /* Animation durations */
+  --button-hover-duration: 0.2s;
+  --toggle-transition-duration: 0.3s;
+}
