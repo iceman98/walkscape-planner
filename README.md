@@ -1,18 +1,6 @@
-# sv
+# Walkscape Planner
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```sh
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
+A SvelteKit application for planning recipes in the Walkscape game.
 
 ## Developing
 
@@ -35,4 +23,27 @@ npm run build
 
 You can preview the production build with `npm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## GitHub Pages Deployment
+
+This project is configured for automatic deployment to GitHub Pages.
+
+### Automatic Deployment
+
+1. Push changes to the `main` branch
+2. GitHub Actions will automatically build and deploy to GitHub Pages
+3. Your site will be available at `https://[username].github.io/walkscape-planner`
+
+### Manual Deployment
+
+To deploy manually:
+
+```sh
+npm run deploy
+```
+
+### Configuration Notes
+
+- Uses `@sveltejs/adapter-static` for static site generation
+- Base path is set to `/walkscape-planner` for GitHub Pages
+- Build output is directed to the `build` directory
+- GitHub Actions workflow handles automatic deployment from main branch
