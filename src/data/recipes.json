@@ -6,12 +6,14 @@
             "materials": [
                 {
                     "name": "Wood Scrap",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/wood_scrap.svg"
                 }
             ],
             "profession": {
                 "name": "Carpentry",
-                "level": 1
+                "level": 1,
+                "icon": "./professions/carpentry.svg"
             },
             "service": "Basic Sawmill"
         }
@@ -23,12 +25,14 @@
             "materials": [
                 {
                     "name": "Birch Logs",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/birch_logs.svg"
                 }
             ],
             "profession": {
                 "name": "Carpentry",
-                "level": 1
+                "level": 1,
+                "icon": "./professions/carpentry.svg"
             },
             "service": "Basic Sawmill"
         }
@@ -40,12 +44,14 @@
             "materials": [
                 {
                     "name": "Birch Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/birch_plank.svg"
                 }
             ],
             "profession": {
                 "name": "Carpentry",
-                "level": 1
+                "level": 1,
+                "icon": "./professions/carpentry.svg"
             },
             "service": "Basic Sawmill"
         }
@@ -57,12 +63,14 @@
             "materials": [
                 {
                     "name": "Birch Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/birch_plank.svg"
                 }
             ],
             "profession": {
                 "name": "Carpentry",
-                "level": 1
+                "level": 1,
+                "icon": "./professions/carpentry.svg"
             },
             "service": "Basic Sawmill"
         }
@@ -74,12 +82,14 @@
             "materials": [
                 {
                     "name": "Wood Scrap",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/wood_scrap.svg"
                 }
             ],
             "profession": {
                 "name": "Carpentry",
-                "level": 10
+                "level": 10,
+                "icon": "./professions/carpentry.svg"
             },
             "service": "Basic Sawmill"
         }
@@ -91,12 +101,14 @@
             "materials": [
                 {
                     "name": "Pine Logs",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/pine_logs.svg"
                 }
             ],
             "profession": {
                 "name": "Carpentry",
-                "level": 10
+                "level": 10,
+                "icon": "./professions/carpentry.svg"
             },
             "service": "Basic Sawmill"
         }
@@ -108,12 +120,14 @@
             "materials": [
                 {
                     "name": "Wood Scrap",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/wood_scrap.svg"
                 }
             ],
             "profession": {
                 "name": "Carpentry",
-                "level": 20
+                "level": 20,
+                "icon": "./professions/carpentry.svg"
             },
             "service": "Basic Sawmill"
         }
@@ -125,12 +139,14 @@
             "materials": [
                 {
                     "name": "Spruce Logs",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/spruce_logs.svg"
                 }
             ],
             "profession": {
                 "name": "Carpentry",
-                "level": 20
+                "level": 20,
+                "icon": "./professions/carpentry.svg"
             },
             "service": "Basic Sawmill"
         }
@@ -142,12 +158,14 @@
             "materials": [
                 {
                     "name": "Wood Scrap",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/wood_scrap.svg"
                 }
             ],
             "profession": {
                 "name": "Carpentry",
-                "level": 25
+                "level": 25,
+                "icon": "./professions/carpentry.svg"
             },
             "service": "Basic Sawmill"
         }
@@ -159,12 +177,14 @@
             "materials": [
                 {
                     "name": "Oak Logs",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/oak_logs.svg"
                 }
             ],
             "profession": {
                 "name": "Carpentry",
-                "level": 25
+                "level": 25,
+                "icon": "./professions/carpentry.svg"
             },
             "service": "Basic Sawmill"
         }
@@ -176,12 +196,14 @@
             "materials": [
                 {
                     "name": "Wood Scrap",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/wood_scrap.svg"
                 }
             ],
             "profession": {
                 "name": "Carpentry",
-                "level": 30
+                "level": 30,
+                "icon": "./professions/carpentry.svg"
             },
             "service": "Basic Sawmill"
         }
@@ -193,12 +215,14 @@
             "materials": [
                 {
                     "name": "Maple Logs",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/maple_logs.svg"
                 }
             ],
             "profession": {
                 "name": "Carpentry",
-                "level": 30
+                "level": 30,
+                "icon": "./professions/carpentry.svg"
             },
             "service": "Basic Sawmill"
         }
@@ -210,12 +234,14 @@
             "materials": [
                 {
                     "name": "Wood Scrap",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/wood_scrap.svg"
                 }
             ],
             "profession": {
                 "name": "Carpentry",
-                "level": 40
+                "level": 40,
+                "icon": "./professions/carpentry.svg"
             },
             "service": "Basic Sawmill"
         }
@@ -227,12 +253,14 @@
             "materials": [
                 {
                     "name": "Wood Scrap",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/wood_scrap.svg"
                 }
             ],
             "profession": {
                 "name": "Carpentry",
-                "level": 40
+                "level": 40,
+                "icon": "./professions/carpentry.svg"
             },
             "service": "Basic Sawmill"
         }
@@ -244,12 +272,14 @@
             "materials": [
                 {
                     "name": "Teak Logs",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/teak_logs.svg"
                 }
             ],
             "profession": {
                 "name": "Carpentry",
-                "level": 40
+                "level": 40,
+                "icon": "./professions/carpentry.svg"
             },
             "service": "Basic Sawmill"
         }
@@ -261,12 +291,14 @@
             "materials": [
                 {
                     "name": "Willow Logs",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/willow_logs.svg"
                 }
             ],
             "profession": {
                 "name": "Carpentry",
-                "level": 40
+                "level": 40,
+                "icon": "./professions/carpentry.svg"
             },
             "service": "Basic Sawmill"
         }
@@ -278,12 +310,14 @@
             "materials": [
                 {
                     "name": "Bamboo Logs",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/bamboo_logs.svg"
                 }
             ],
             "profession": {
                 "name": "Carpentry",
-                "level": 45
+                "level": 45,
+                "icon": "./professions/carpentry.svg"
             },
             "service": "Basic Sawmill"
         }
@@ -295,12 +329,14 @@
             "materials": [
                 {
                     "name": "Coral",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/coral.svg"
                 }
             ],
             "profession": {
                 "name": "Carpentry",
-                "level": 45
+                "level": 45,
+                "icon": "./professions/carpentry.svg"
             },
             "service": "Basic Sawmill"
         }
@@ -312,12 +348,14 @@
             "materials": [
                 {
                     "name": "Mangrove Logs",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/mangrove_logs.svg"
                 }
             ],
             "profession": {
                 "name": "Carpentry",
-                "level": 50
+                "level": 50,
+                "icon": "./professions/carpentry.svg"
             },
             "service": "Advanced Sawmill"
         }
@@ -329,12 +367,14 @@
             "materials": [
                 {
                     "name": "Raw Perch",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/raw_perch.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 1
+                "level": 1,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -346,12 +386,14 @@
             "materials": [
                 {
                     "name": "Raw Shrimp",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/raw_shrimp.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 1
+                "level": 1,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -363,12 +405,14 @@
             "materials": [
                 {
                     "name": "Nettle",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/nettle.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 3
+                "level": 3,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -380,12 +424,14 @@
             "materials": [
                 {
                     "name": "Raw Carp",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/raw_carp.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 5
+                "level": 5,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -397,12 +443,14 @@
             "materials": [
                 {
                     "name": "Wheat",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/wheat.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 8
+                "level": 8,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -414,12 +462,14 @@
             "materials": [
                 {
                     "name": "Raw Pike",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/raw_pike.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 10
+                "level": 10,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -431,12 +481,14 @@
             "materials": [
                 {
                     "name": "Wheat",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/wheat.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 15
+                "level": 15,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -448,16 +500,19 @@
             "materials": [
                 {
                     "name": "Wheat",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/wheat.svg"
                 },
                 {
                     "name": "Milk",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/milk.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 17
+                "level": 17,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -469,12 +524,14 @@
             "materials": [
                 {
                     "name": "Raw Trout",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/raw_trout.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 20
+                "level": 20,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -486,16 +543,19 @@
             "materials": [
                 {
                     "name": "Chocolate",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/chocolate.svg"
                 },
                 {
                     "name": "Milk",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/milk.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 22
+                "level": 22,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -507,12 +567,14 @@
             "materials": [
                 {
                     "name": "Wheat",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/wheat.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 25
+                "level": 25,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -524,12 +586,14 @@
             "materials": [
                 {
                     "name": "Milkweed",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/milkweed.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 25
+                "level": 25,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -541,16 +605,19 @@
             "materials": [
                 {
                     "name": "Cucumber",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/cucumber.svg"
                 },
                 {
                     "name": "Salt Crystal",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/salt_crystal.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 27
+                "level": 27,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -562,12 +629,14 @@
             "materials": [
                 {
                     "name": "Raw Salmon",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/raw_salmon.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 30
+                "level": 30,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -579,12 +648,14 @@
             "materials": [
                 {
                     "name": "Raw Jellyfish",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/raw_jellyfish.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 30
+                "level": 30,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -596,12 +667,14 @@
             "materials": [
                 {
                     "name": "Raw Trout",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/raw_trout.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 30
+                "level": 30,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -613,16 +686,19 @@
             "materials": [
                 {
                     "name": "Mushroom",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/mushroom.svg"
                 },
                 {
                     "name": "Tomato",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/tomato.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 32
+                "level": 32,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -634,12 +710,14 @@
             "materials": [
                 {
                     "name": "Raw Lobster",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/raw_lobster.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 35
+                "level": 35,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -651,16 +729,19 @@
             "materials": [
                 {
                     "name": "Mud",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/mud.svg"
                 },
                 {
                     "name": "Wheat",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/wheat.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 35
+                "level": 35,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -672,12 +753,14 @@
             "materials": [
                 {
                     "name": "Kelp",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/kelp.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 35
+                "level": 35,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -689,12 +772,14 @@
             "materials": [
                 {
                     "name": "Sweet Kelp",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/sweet_kelp.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 36
+                "level": 36,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -706,16 +791,19 @@
             "materials": [
                 {
                     "name": "Berries",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/berries.svg"
                 },
                 {
                     "name": "Bread",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/bread.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 37
+                "level": 37,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -727,16 +815,19 @@
             "materials": [
                 {
                     "name": "Salt Crystal",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/salt_crystal.svg"
                 },
                 {
                     "name": "Volcanic Ash",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/volcanic_ash.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 38
+                "level": 38,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -748,12 +839,14 @@
             "materials": [
                 {
                     "name": "Raw Swordfish",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/raw_swordfish.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 40
+                "level": 40,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -765,16 +858,19 @@
             "materials": [
                 {
                     "name": "Bell Pepper",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/bell_pepper.svg"
                 },
                 {
                     "name": "Pepper",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/pepper.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 44
+                "level": 44,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -786,16 +882,19 @@
             "materials": [
                 {
                     "name": "Salty Hops",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/salty_hops.svg"
                 },
                 {
                     "name": "Salt Crystal",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/salt_crystal.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 45
+                "level": 45,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -807,12 +906,14 @@
             "materials": [
                 {
                     "name": "Raw Stingray",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/raw_stingray.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 45
+                "level": 45,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -824,12 +925,14 @@
             "materials": [
                 {
                     "name": "Raw Squid",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/raw_squid.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 45
+                "level": 45,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -841,28 +944,34 @@
             "materials": [
                 {
                     "name": "Carrot",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/carrot.svg"
                 },
                 {
                     "name": "Honeycomb",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/honeycomb.svg"
                 },
                 {
                     "name": "Wheat",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/wheat.svg"
                 },
                 {
                     "name": "Egg",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/egg.svg"
                 },
                 {
                     "name": "Potato",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/potato.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 45
+                "level": 45,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -874,24 +983,29 @@
             "materials": [
                 {
                     "name": "Raw Salmon",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/raw_salmon.svg"
                 },
                 {
                     "name": "Wheat",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/wheat.svg"
                 },
                 {
                     "name": "Egg",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/egg.svg"
                 },
                 {
                     "name": "Potato",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/potato.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 46
+                "level": 46,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -903,16 +1017,19 @@
             "materials": [
                 {
                     "name": "Raw Swordfish",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/raw_swordfish.svg"
                 },
                 {
                     "name": "Bread",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/bread.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 46
+                "level": 46,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -924,20 +1041,24 @@
             "materials": [
                 {
                     "name": "Sea Cabbage",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/sea_cabbage.svg"
                 },
                 {
                     "name": "Sea Spinach",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/sea_spinach.svg"
                 },
                 {
                     "name": "Underwater Lotus",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/underwater_lotus.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 46
+                "level": 46,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Basic Kitchen"
         }
@@ -949,12 +1070,14 @@
             "materials": [
                 {
                     "name": "Raw Shark",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/raw_shark.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 50
+                "level": 50,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Advanced Kitchen"
         }
@@ -966,12 +1089,14 @@
             "materials": [
                 {
                     "name": "Raw Largemouth Bass",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/raw_largemouth_bass.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 55
+                "level": 55,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Advanced Kitchen"
         }
@@ -983,12 +1108,14 @@
             "materials": [
                 {
                     "name": "Raw Anglerfish",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/raw_anglerfish.svg"
                 }
             ],
             "profession": {
                 "name": "Cooking",
-                "level": 60
+                "level": 60,
+                "icon": "./professions/cooking.svg"
             },
             "service": "Advanced Kitchen"
         }
@@ -1000,16 +1127,19 @@
             "materials": [
                 {
                     "name": "Stone",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/stone.svg"
                 },
                 {
                     "name": "Wooden Stick",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/wooden_stick.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 1
+                "level": 1,
+                "icon": "./professions/crafting.svg"
             }
         }
     },
@@ -1020,16 +1150,19 @@
             "materials": [
                 {
                     "name": "Stone",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/stone.svg"
                 },
                 {
                     "name": "Wooden Stick",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/wooden_stick.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 1
+                "level": 1,
+                "icon": "./professions/crafting.svg"
             }
         }
     },
@@ -1040,20 +1173,24 @@
             "materials": [
                 {
                     "name": "Stone",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/stone.svg"
                 },
                 {
                     "name": "Wooden Stick",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/wooden_stick.svg"
                 },
                 {
                     "name": "Twine",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/twine.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 1
+                "level": 1,
+                "icon": "./professions/crafting.svg"
             }
         }
     },
@@ -1064,12 +1201,14 @@
             "materials": [
                 {
                     "name": "Flax",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/flax.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 1
+                "level": 1,
+                "icon": "./professions/crafting.svg"
             }
         }
     },
@@ -1080,16 +1219,19 @@
             "materials": [
                 {
                     "name": "Copper Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/copper_bar.svg"
                 },
                 {
                     "name": "Birch Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/birch_plank.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 2
+                "level": 2,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1101,16 +1243,19 @@
             "materials": [
                 {
                     "name": "Copper Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/copper_bar.svg"
                 },
                 {
                     "name": "Birch Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/birch_plank.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 2
+                "level": 2,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1122,20 +1267,24 @@
             "materials": [
                 {
                     "name": "Copper Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/copper_bar.svg"
                 },
                 {
                     "name": "Birch Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/birch_plank.svg"
                 },
                 {
                     "name": "Twine",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/twine.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 2
+                "level": 2,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1147,12 +1296,14 @@
             "materials": [
                 {
                     "name": "Twine",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/twine.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 2
+                "level": 2,
+                "icon": "./professions/crafting.svg"
             }
         }
     },
@@ -1163,16 +1314,19 @@
             "materials": [
                 {
                     "name": "Wooden Stick",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/wooden_stick.svg"
                 },
                 {
                     "name": "Fishing Line",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/fishing_line.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 4
+                "level": 4,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1184,16 +1338,19 @@
             "materials": [
                 {
                     "name": "Sturdy Branch",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/sturdy_branch.svg"
                 },
                 {
                     "name": "Large Stone",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/large_stone.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 5
+                "level": 5,
+                "icon": "./professions/crafting.svg"
             }
         }
     },
@@ -1204,16 +1361,19 @@
             "materials": [
                 {
                     "name": "Bronze Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/bronze_bar.svg"
                 },
                 {
                     "name": "Pine Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/pine_plank.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 10
+                "level": 10,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1225,16 +1385,19 @@
             "materials": [
                 {
                     "name": "Bronze Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/bronze_bar.svg"
                 },
                 {
                     "name": "Pine Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/pine_plank.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 10
+                "level": 10,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1246,16 +1409,19 @@
             "materials": [
                 {
                     "name": "Pine Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/pine_plank.svg"
                 },
                 {
                     "name": "Fishing Line",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/fishing_line.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 10
+                "level": 10,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1267,12 +1433,14 @@
             "materials": [
                 {
                     "name": "Trash",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/trash.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 10
+                "level": 10,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1284,16 +1452,19 @@
             "materials": [
                 {
                     "name": "Silver Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/silver_bar.svg"
                 },
                 {
                     "name": "Walking Stick",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/walking_stick.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 12
+                "level": 12,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1305,12 +1476,14 @@
             "materials": [
                 {
                     "name": "Twine",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/twine.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 15
+                "level": 15,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1322,16 +1495,19 @@
             "materials": [
                 {
                     "name": "Iron Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/iron_bar.svg"
                 },
                 {
                     "name": "Spruce Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/spruce_plank.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 20
+                "level": 20,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1343,16 +1519,19 @@
             "materials": [
                 {
                     "name": "Iron Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/iron_bar.svg"
                 },
                 {
                     "name": "Spruce Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/spruce_plank.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 20
+                "level": 20,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1364,20 +1543,24 @@
             "materials": [
                 {
                     "name": "Iron Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/iron_bar.svg"
                 },
                 {
                     "name": "Spruce Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/spruce_plank.svg"
                 },
                 {
                     "name": "Twine",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/twine.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 20
+                "level": 20,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1389,16 +1572,19 @@
             "materials": [
                 {
                     "name": "Iron Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/iron_bar.svg"
                 },
                 {
                     "name": "Maple Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/maple_plank.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 25
+                "level": 25,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1410,12 +1596,14 @@
             "materials": [
                 {
                     "name": "Hardened Kelp",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/hardened_kelp.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 25
+                "level": 25,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1427,12 +1615,14 @@
             "materials": [
                 {
                     "name": "Hardened Kelp",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/hardened_kelp.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 25
+                "level": 25,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1444,12 +1634,14 @@
             "materials": [
                 {
                     "name": "Hardened Kelp",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/hardened_kelp.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 25
+                "level": 25,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1461,16 +1653,19 @@
             "materials": [
                 {
                     "name": "Steel Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/steel_bar.svg"
                 },
                 {
                     "name": "Maple Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/maple_plank.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 30
+                "level": 30,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1482,16 +1677,19 @@
             "materials": [
                 {
                     "name": "Steel Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/steel_bar.svg"
                 },
                 {
                     "name": "Maple Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/maple_plank.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 30
+                "level": 30,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1503,20 +1701,24 @@
             "materials": [
                 {
                     "name": "Steel Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/steel_bar.svg"
                 },
                 {
                     "name": "Maple Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/maple_plank.svg"
                 },
                 {
                     "name": "Twine",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/twine.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 30
+                "level": 30,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1528,16 +1730,19 @@
             "materials": [
                 {
                     "name": "Oak Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/oak_plank.svg"
                 },
                 {
                     "name": "Fishing Line",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/fishing_line.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 30
+                "level": 30,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1549,16 +1754,19 @@
             "materials": [
                 {
                     "name": "Steel Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/steel_bar.svg"
                 },
                 {
                     "name": "Teak Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/teak_plank.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 35
+                "level": 35,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1570,12 +1778,14 @@
             "materials": [
                 {
                     "name": "Hardened Kelp",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/hardened_kelp.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 37
+                "level": 37,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1587,16 +1797,19 @@
             "materials": [
                 {
                     "name": "Steel Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/steel_bar.svg"
                 },
                 {
                     "name": "Forge Bellows",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/forge_bellows.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 37
+                "level": 37,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1608,16 +1821,19 @@
             "materials": [
                 {
                     "name": "Kelp Twine",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/kelp_twine.svg"
                 },
                 {
                     "name": "Sturdy Branch",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/sturdy_branch.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 37
+                "level": 37,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1629,16 +1845,19 @@
             "materials": [
                 {
                     "name": "Tarsilium Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/tarsilium_bar.svg"
                 },
                 {
                     "name": "Teak Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/teak_plank.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 40
+                "level": 40,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1650,16 +1869,19 @@
             "materials": [
                 {
                     "name": "Tarsilium Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/tarsilium_bar.svg"
                 },
                 {
                     "name": "Teak Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/teak_plank.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 40
+                "level": 40,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1671,16 +1893,19 @@
             "materials": [
                 {
                     "name": "Willow Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/willow_plank.svg"
                 },
                 {
                     "name": "Fishing Line",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/fishing_line.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 40
+                "level": 40,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1692,16 +1917,19 @@
             "materials": [
                 {
                     "name": "Hardened Kelp",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/hardened_kelp.svg"
                 },
                 {
                     "name": "Volcanic Rock",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/volcanic_rock.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 45
+                "level": 45,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1713,16 +1941,19 @@
             "materials": [
                 {
                     "name": "Hydrilium Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/hydrilium_bar.svg"
                 },
                 {
                     "name": "Coral Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/coral_plank.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 45
+                "level": 45,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1734,12 +1965,14 @@
             "materials": [
                 {
                     "name": "Hydrilium",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/hydrilium.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 45
+                "level": 45,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1751,12 +1984,14 @@
             "materials": [
                 {
                     "name": "Hydrilium",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/hydrilium.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 45
+                "level": 45,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1768,12 +2003,14 @@
             "materials": [
                 {
                     "name": "Hydrilium",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/hydrilium.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 45
+                "level": 45,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1785,16 +2022,19 @@
             "materials": [
                 {
                     "name": "Hydrilium Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/hydrilium_bar.svg"
                 },
                 {
                     "name": "Coral Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/coral_plank.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 45
+                "level": 45,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1806,16 +2046,19 @@
             "materials": [
                 {
                     "name": "Hydrilium Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/hydrilium_bar.svg"
                 },
                 {
                     "name": "Coral Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/coral_plank.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 45
+                "level": 45,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1827,20 +2070,24 @@
             "materials": [
                 {
                     "name": "Hydrilium Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/hydrilium_bar.svg"
                 },
                 {
                     "name": "Coral Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/coral_plank.svg"
                 },
                 {
                     "name": "Kelp Twine",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/kelp_twine.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 45
+                "level": 45,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Basic Workshop"
         }
@@ -1852,16 +2099,19 @@
             "materials": [
                 {
                     "name": "Farganite Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/farganite_bar.svg"
                 },
                 {
                     "name": "Mangrove Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/mangrove_plank.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 50
+                "level": 50,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Advanced Workshop"
         }
@@ -1873,16 +2123,19 @@
             "materials": [
                 {
                     "name": "Farganite Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/farganite_bar.svg"
                 },
                 {
                     "name": "Mangrove Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/mangrove_plank.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 50
+                "level": 50,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Advanced Workshop"
         }
@@ -1894,16 +2147,19 @@
             "materials": [
                 {
                     "name": "Hydrilium Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/hydrilium_bar.svg"
                 },
                 {
                     "name": "Log Splitter",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/log_splitter.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 52
+                "level": 52,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Advanced Workshop"
         }
@@ -1915,16 +2171,19 @@
             "materials": [
                 {
                     "name": "Hydrilium Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/hydrilium_bar.svg"
                 },
                 {
                     "name": "Miner's Magnet",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/miner_s_magnet.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 54
+                "level": 54,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Advanced Workshop"
         }
@@ -1936,20 +2195,24 @@
             "materials": [
                 {
                     "name": "Mangrove Plank",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/mangrove_plank.svg"
                 },
                 {
                     "name": "Big Basket",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/big_basket.svg"
                 },
                 {
                     "name": "Log Basket",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/log_basket.svg"
                 }
             ],
             "profession": {
                 "name": "Crafting",
-                "level": 55
+                "level": 55,
+                "icon": "./professions/crafting.svg"
             },
             "service": "Advanced Workshop"
         }
@@ -1961,12 +2224,14 @@
             "materials": [
                 {
                     "name": "Metal Scrap",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/metal_scrap.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 1
+                "level": 1,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -1978,12 +2243,14 @@
             "materials": [
                 {
                     "name": "Copper Ore",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/copper_ore.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 1
+                "level": 1,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -1995,12 +2262,14 @@
             "materials": [
                 {
                     "name": "Copper Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/copper_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 3
+                "level": 3,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -2012,12 +2281,14 @@
             "materials": [
                 {
                     "name": "Silver Nugget",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/silver_nugget.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 5
+                "level": 5,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -2029,12 +2300,14 @@
             "materials": [
                 {
                     "name": "Copper Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/copper_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 6
+                "level": 6,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -2046,12 +2319,14 @@
             "materials": [
                 {
                     "name": "Metal Scrap",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/metal_scrap.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 10
+                "level": 10,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -2063,16 +2338,19 @@
             "materials": [
                 {
                     "name": "Copper Ore",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/copper_ore.svg"
                 },
                 {
                     "name": "Tin Ore",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/tin_ore.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 10
+                "level": 10,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -2084,12 +2362,14 @@
             "materials": [
                 {
                     "name": "Bronze Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/bronze_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 13
+                "level": 13,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -2101,12 +2381,14 @@
             "materials": [
                 {
                     "name": "Gold Nugget",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/gold_nugget.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 15
+                "level": 15,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -2118,12 +2400,14 @@
             "materials": [
                 {
                     "name": "Bronze Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/bronze_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 16
+                "level": 16,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -2135,12 +2419,14 @@
             "materials": [
                 {
                     "name": "Metal Scrap",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/metal_scrap.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 20
+                "level": 20,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -2152,12 +2438,14 @@
             "materials": [
                 {
                     "name": "Iron Ore",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/iron_ore.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 20
+                "level": 20,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -2169,12 +2457,14 @@
             "materials": [
                 {
                     "name": "Iron Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/iron_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 23
+                "level": 23,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -2186,12 +2476,14 @@
             "materials": [
                 {
                     "name": "Iron Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/iron_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 26
+                "level": 26,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -2203,12 +2495,14 @@
             "materials": [
                 {
                     "name": "Metal Scrap",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/metal_scrap.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 30
+                "level": 30,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -2220,16 +2514,19 @@
             "materials": [
                 {
                     "name": "Iron Ore",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/iron_ore.svg"
                 },
                 {
                     "name": "Coal",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/coal.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 30
+                "level": 30,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -2241,12 +2538,14 @@
             "materials": [
                 {
                     "name": "Steel Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/steel_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 33
+                "level": 33,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -2258,12 +2557,14 @@
             "materials": [
                 {
                     "name": "Steel Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/steel_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 36
+                "level": 36,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -2275,12 +2576,14 @@
             "materials": [
                 {
                     "name": "Metal Scrap",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/metal_scrap.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 40
+                "level": 40,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -2292,16 +2595,19 @@
             "materials": [
                 {
                     "name": "Tarsilium Ore",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/tarsilium_ore.svg"
                 },
                 {
                     "name": "Coal",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/coal.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 40
+                "level": 40,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -2313,16 +2619,19 @@
             "materials": [
                 {
                     "name": "Tarsilium Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/tarsilium_bar.svg"
                 },
                 {
                     "name": "Steel-Toe Boots",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/steel_toe_boots.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 41
+                "level": 41,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -2334,12 +2643,14 @@
             "materials": [
                 {
                     "name": "Tarsilium Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/tarsilium_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 43
+                "level": 43,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -2351,16 +2662,19 @@
             "materials": [
                 {
                     "name": "Kelp",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/kelp.svg"
                 },
                 {
                     "name": "Hydrilium",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/hydrilium.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 45
+                "level": 45,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -2372,12 +2686,14 @@
             "materials": [
                 {
                     "name": "Tarsilium Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/tarsilium_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 46
+                "level": 46,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Basic Forge"
         }
@@ -2389,16 +2705,19 @@
             "materials": [
                 {
                     "name": "Farganite Ore",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/farganite_ore.svg"
                 },
                 {
                     "name": "Coal",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/coal.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 50
+                "level": 50,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Advanced Forge"
         }
@@ -2410,12 +2729,14 @@
             "materials": [
                 {
                     "name": "Farganite Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/farganite_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 53
+                "level": 53,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Advanced Forge"
         }
@@ -2427,12 +2748,14 @@
             "materials": [
                 {
                     "name": "Farganite Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/farganite_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 56
+                "level": 56,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Advanced Forge"
         }
@@ -2444,36 +2767,44 @@
             "materials": [
                 {
                     "name": "Farganite Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/farganite_bar.svg"
                 },
                 {
                     "name": "Gold Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/gold_bar.svg"
                 },
                 {
                     "name": "Sun Stone",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/sun_stone.svg"
                 },
                 {
                     "name": "Ruby",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/ruby.svg"
                 },
                 {
                     "name": "Jade",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/jade.svg"
                 },
                 {
                     "name": "Topaz",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/topaz.svg"
                 },
                 {
                     "name": "Wrentmarine",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/wrentmarine.svg"
                 }
             ],
             "profession": {
                 "name": "Smithing",
-                "level": 59
+                "level": 59,
+                "icon": "./professions/smithing.svg"
             },
             "service": "Advanced Forge"
         }
@@ -2485,16 +2816,19 @@
             "materials": [
                 {
                     "name": "Moondaisy",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/moondaisy.svg"
                 },
                 {
                     "name": "Snowdrop",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/snowdrop.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 1
+                "level": 1,
+                "icon": "./professions/trinketry.svg"
             }
         }
     },
@@ -2505,12 +2839,14 @@
             "materials": [
                 {
                     "name": "Rough Opal",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/rough_opal.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 1
+                "level": 1,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2522,12 +2858,14 @@
             "materials": [
                 {
                     "name": "Silver Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/silver_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 5
+                "level": 5,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2539,12 +2877,14 @@
             "materials": [
                 {
                     "name": "Rough Star Pearl",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/rough_star_pearl.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 8
+                "level": 8,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2556,16 +2896,19 @@
             "materials": [
                 {
                     "name": "Opal",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/opal.svg"
                 },
                 {
                     "name": "Silver Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/silver_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 10
+                "level": 10,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2577,12 +2920,14 @@
             "materials": [
                 {
                     "name": "Gold Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/gold_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 15
+                "level": 15,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2594,12 +2939,14 @@
             "materials": [
                 {
                     "name": "Rough Wrentmarine",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/rough_wrentmarine.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 15
+                "level": 15,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2611,16 +2958,19 @@
             "materials": [
                 {
                     "name": "Star Pearl",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/star_pearl.svg"
                 },
                 {
                     "name": "Silver Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/silver_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 17
+                "level": 17,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2632,16 +2982,19 @@
             "materials": [
                 {
                     "name": "Opal",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/opal.svg"
                 },
                 {
                     "name": "Gold Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/gold_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 20
+                "level": 20,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2653,12 +3006,14 @@
             "materials": [
                 {
                     "name": "Rough Topaz",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/rough_topaz.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 21
+                "level": 21,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2670,16 +3025,19 @@
             "materials": [
                 {
                     "name": "Wrentmarine",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/wrentmarine.svg"
                 },
                 {
                     "name": "Silver Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/silver_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 24
+                "level": 24,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2691,12 +3049,14 @@
             "materials": [
                 {
                     "name": "Rough Jade",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/rough_jade.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 26
+                "level": 26,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2708,16 +3068,19 @@
             "materials": [
                 {
                     "name": "Star Pearl",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/star_pearl.svg"
                 },
                 {
                     "name": "Gold Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/gold_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 27
+                "level": 27,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2729,20 +3092,24 @@
             "materials": [
                 {
                     "name": "Compass Trinket",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/compass_trinket.svg"
                 },
                 {
                     "name": "Gold Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/gold_bar.svg"
                 },
                 {
                     "name": "Silver Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/silver_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 27
+                "level": 27,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2754,16 +3121,19 @@
             "materials": [
                 {
                     "name": "Topaz",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/topaz.svg"
                 },
                 {
                     "name": "Silver Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/silver_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 30
+                "level": 30,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2775,12 +3145,14 @@
             "materials": [
                 {
                     "name": "Rough Ruby",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/rough_ruby.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 30
+                "level": 30,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2792,20 +3164,24 @@
             "materials": [
                 {
                     "name": "Eel Trinket",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/eel_trinket.svg"
                 },
                 {
                     "name": "Gold Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/gold_bar.svg"
                 },
                 {
                     "name": "Silver Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/silver_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 31
+                "level": 31,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2817,20 +3193,24 @@
             "materials": [
                 {
                     "name": "Heron Trinket",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/heron_trinket.svg"
                 },
                 {
                     "name": "Gold Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/gold_bar.svg"
                 },
                 {
                     "name": "Silver Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/silver_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 33
+                "level": 33,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2842,16 +3222,19 @@
             "materials": [
                 {
                     "name": "Wrentmarine",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/wrentmarine.svg"
                 },
                 {
                     "name": "Gold Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/gold_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 34
+                "level": 34,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2863,12 +3246,14 @@
             "materials": [
                 {
                     "name": "Rough Sun Stone",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/rough_sun_stone.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 34
+                "level": 34,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2880,16 +3265,19 @@
             "materials": [
                 {
                     "name": "Jade",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/jade.svg"
                 },
                 {
                     "name": "Silver Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/silver_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 35
+                "level": 35,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2901,20 +3289,24 @@
             "materials": [
                 {
                     "name": "Bat Trinket",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/bat_trinket.svg"
                 },
                 {
                     "name": "Gold Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/gold_bar.svg"
                 },
                 {
                     "name": "Silver Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/silver_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 35
+                "level": 35,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2926,20 +3318,24 @@
             "materials": [
                 {
                     "name": "Cooling Icicle Trinket",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/cooling_icicle_trinket.svg"
                 },
                 {
                     "name": "Gold Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/gold_bar.svg"
                 },
                 {
                     "name": "Silver Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/silver_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 37
+                "level": 37,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2951,12 +3347,14 @@
             "materials": [
                 {
                     "name": "Rough Ethernite",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/rough_ethernite.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 38
+                "level": 38,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2968,16 +3366,19 @@
             "materials": [
                 {
                     "name": "Ruby",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/ruby.svg"
                 },
                 {
                     "name": "Silver Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/silver_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 39
+                "level": 39,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -2989,16 +3390,19 @@
             "materials": [
                 {
                     "name": "Topaz",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/topaz.svg"
                 },
                 {
                     "name": "Gold Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/gold_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 40
+                "level": 40,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -3010,20 +3414,24 @@
             "materials": [
                 {
                     "name": "Circular Root Trinket",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/circular_root_trinket.svg"
                 },
                 {
                     "name": "Gold Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/gold_bar.svg"
                 },
                 {
                     "name": "Silver Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/silver_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 41
+                "level": 41,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -3035,16 +3443,19 @@
             "materials": [
                 {
                     "name": "Pink Pearl Trinket",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/pink_pearl_trinket.svg"
                 },
                 {
                     "name": "Pearls",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/pearls.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 42
+                "level": 42,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -3056,16 +3467,19 @@
             "materials": [
                 {
                     "name": "Sun Stone",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/sun_stone.svg"
                 },
                 {
                     "name": "Silver Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/silver_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 43
+                "level": 43,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -3077,20 +3491,24 @@
             "materials": [
                 {
                     "name": "Measuring Spoons Trinket",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/measuring_spoons_trinket.svg"
                 },
                 {
                     "name": "Gold Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/gold_bar.svg"
                 },
                 {
                     "name": "Silver Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/silver_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 43
+                "level": 43,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -3102,16 +3520,19 @@
             "materials": [
                 {
                     "name": "Jade",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/jade.svg"
                 },
                 {
                     "name": "Gold Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/gold_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 45
+                "level": 45,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -3123,20 +3544,24 @@
             "materials": [
                 {
                     "name": "Shrimp Trinket",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/shrimp_trinket.svg"
                 },
                 {
                     "name": "Gold Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/gold_bar.svg"
                 },
                 {
                     "name": "Silver Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/silver_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 45
+                "level": 45,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -3148,16 +3573,19 @@
             "materials": [
                 {
                     "name": "Ethernite",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/ethernite.svg"
                 },
                 {
                     "name": "Silver Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/silver_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 47
+                "level": 47,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -3169,16 +3597,19 @@
             "materials": [
                 {
                     "name": "Ruby",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/ruby.svg"
                 },
                 {
                     "name": "Gold Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/gold_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 49
+                "level": 49,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -3190,20 +3621,24 @@
             "materials": [
                 {
                     "name": "Beaver Trinket",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/beaver_trinket.svg"
                 },
                 {
                     "name": "Gold Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/gold_bar.svg"
                 },
                 {
                     "name": "Silver Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/silver_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 49
+                "level": 49,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Basic Trinketry Bench"
         }
@@ -3215,20 +3650,24 @@
             "materials": [
                 {
                     "name": "Lucky Rabbit Foot Trinket",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/lucky_rabbit_foot_trinket.svg"
                 },
                 {
                     "name": "Gold Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/gold_bar.svg"
                 },
                 {
                     "name": "Silver Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/silver_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 51
+                "level": 51,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Advanced Trinketry Bench"
         }
@@ -3240,16 +3679,19 @@
             "materials": [
                 {
                     "name": "Sun Stone",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/sun_stone.svg"
                 },
                 {
                     "name": "Gold Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/gold_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 53
+                "level": 53,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Advanced Trinketry Bench"
         }
@@ -3261,44 +3703,54 @@
             "materials": [
                 {
                     "name": "Beaver Trinket",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/beaver_trinket.svg"
                 },
                 {
                     "name": "Gold Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/gold_bar.svg"
                 },
                 {
                     "name": "Silver Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/silver_bar.svg"
                 },
                 {
                     "name": "Heron Trinket",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/heron_trinket.svg"
                 },
                 {
                     "name": "Shrimp Trinket",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/shrimp_trinket.svg"
                 },
                 {
                     "name": "Eel Trinket",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/eel_trinket.svg"
                 },
                 {
                     "name": "Bat Trinket",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/bat_trinket.svg"
                 },
                 {
                     "name": "Shark Tooth Trinket",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/shark_tooth_trinket.svg"
                 },
                 {
                     "name": "Lucky Rabbit Foot Trinket",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/lucky_rabbit_foot_trinket.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 55
+                "level": 55,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Advanced Trinketry Bench"
         }
@@ -3310,16 +3762,19 @@
             "materials": [
                 {
                     "name": "Ethernite",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/ethernite.svg"
                 },
                 {
                     "name": "Gold Bar",
-                    "amount": 1
+                    "amount": 1,
+                    "icon": "./materials/gold_bar.svg"
                 }
             ],
             "profession": {
                 "name": "Trinketry",
-                "level": 57
+                "level": 57,
+                "icon": "./professions/trinketry.svg"
             },
             "service": "Advanced Trinketry Bench"
         }
