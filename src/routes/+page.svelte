@@ -1,14 +1,56 @@
 <script lang="ts">
   import { browser } from "$app/environment";
-  import { Stage, Layer, Group, Text, Rect } from "svelte-konva";
+  import { Stage, Layer, Group, Text, Rect, Image } from "svelte-konva";
 
   import character from "../data/character.json";
   import recipes from "../data/recipes.json";
+  import icons from "../lib/assets/icons.json";
 
   let stageRef: any;
   let scale = 1;
   let stagePos = { x: 0, y: 0 };
   let stageContainer: HTMLDivElement;
+
+  // Cache for loaded images
+  const loadedImages: Record<string, HTMLImageElement> = {};
+
+  // Type definitions
+  type IconsType = {
+    materials: Record<string, string>;
+    professions: Record<string, string>;
+  };
+
+  // Cast icons to proper type
+  const typedIcons: IconsType = icons as IconsType;
+
+  // Simple function to load an image
+  async function loadImage(url: string): Promise<HTMLImageElement | null> {
+    return new Promise((resolve) => {
+      const img = document.createElement('img') as HTMLImageElement;
+      img.onload = () => resolve(img);
+      img.onerror = () => resolve(null);
+      img.src = url;
+    });
+  }
+
+  // Load all icons on component mount
+  import { onMount } from 'svelte';
+  
+  onMount(async () => {
+    // Load all material icons
+    for (const [name, path] of Object.entries(typedIcons.materials)) {
+      const url = `/src/lib/assets/${path.substring(2)}`;
+      const img = await loadImage(url);
+      if (img) loadedImages[path] = img;
+    }
+    
+    // Load all profession icons
+    for (const [name, path] of Object.entries(typedIcons.professions)) {
+      const url = `/src/lib/assets/${path.substring(2)}`;
+      const img = await loadImage(url);
+      if (img) loadedImages[path] = img;
+    }
+  });
 
   // Group recipes by profession and sort by level then alphabetically
   $: groupedRecipes = recipes.reduce((acc: Record<string, any[]>, recipe) => {
@@ -35,14 +77,13 @@
     let yOffset = 0;
     for (let i = 0; i < index; i++) {
       const prevProfession = Object.keys(sortedGroupedRecipes)[i];
-      yOffset += 25 + (sortedGroupedRecipes[prevProfession].length * 20) + 10; // header height + recipes height + spacing
+      yOffset += 60 + (sortedGroupedRecipes[prevProfession].length * 80) + 20; // header height + recipes height + spacing
     }
     acc[profession] = yOffset;
     return acc;
   }, {});
 
   function handleWheel(e: { evt: WheelEvent }) {
-    console.log('Wheel event triggered', e.evt.deltaY);
     if (!stageRef) return;
     
     e.evt.preventDefault();
@@ -51,16 +92,12 @@
     const oldScale = stageRef.scaleX();
     const pointer = stageRef.getPointerPosition();
     
-    console.log('Old scale:', oldScale, 'Pointer:', pointer);
-    
     const mousePointTo = {
       x: (pointer.x - stageRef.x()) / oldScale,
       y: (pointer.y - stageRef.y()) / oldScale,
     };
 
     const newScale = e.evt.deltaY > 0 ? oldScale / scaleBy : oldScale * scaleBy;
-    
-    console.log('New scale:', newScale);
     
     // Limit scale
     if (newScale < 0.5 || newScale > 5) return;
@@ -76,8 +113,6 @@
     stageRef.batchDraw();
     
     scale = newScale;
-    
-    console.log('Scale applied, new scale:', stageRef.scaleX());
   }
 
   function handleDragStart() {
@@ -94,7 +129,6 @@
   }
 
   function handleNativeWheel(e: WheelEvent) {
-    console.log('Native wheel event', e.deltaY);
     if (!stageRef) return;
     
     e.preventDefault();
@@ -103,20 +137,13 @@
     const oldScale = scale; // Use our scale variable
     const stage = stageRef; // Try direct access
     
-    console.log('Stage ref:', stageRef);
-    console.log('Old scale:', oldScale);
-    
     const newScale = e.deltaY > 0 ? oldScale / scaleBy : oldScale * scaleBy;
-    
-    console.log('New scale:', newScale);
     
     // Limit scale
     if (newScale < 0.5 || newScale > 5) return;
     
     // Update scale variable and let Svelte handle the rest
     scale = newScale;
-    
-    console.log('Scale updated to:', scale);
   }
 
   function handleDragEnd() {
@@ -143,14 +170,76 @@
       {#each Object.entries(sortedGroupedRecipes) as [profession, professionRecipes]}
         <Group x={10} y={professionPositions[profession]}>
           <!-- Profession header -->
-          <Rect x={0} y={0} width={200} height={25} fill="darkblue" />
-          <Text text={profession} x={5} y={5} color="white" fontSize={16} />
+          <Rect x={0} y={0} width={300} height={50} fill="darkblue" />
+          <Text text={profession} x={10} y={15} color="white" fontSize={18} />
+          
+          <!-- Profession icon -->
+          {#if typedIcons.professions[profession]}
+            {@const professionIcon = loadedImages[typedIcons.professions[profession]]}
+            {#if professionIcon}
+              <Image
+                image={professionIcon}
+                x={250}
+                y={10}
+                width={30}
+                height={30}
+              />
+            {/if}
+          {/if}
           
           <!-- Recipes for this profession -->
-          {#each professionRecipes as recipe}
-            <Group x={10} y={30 + professionRecipes.indexOf(recipe) * 20}>
-              <Rect x={0} y={0} width={180} height={18} fill="lightgrey" />
-              <Text text={`Lv${recipe.requirements.profession.level}: ${recipe.name}`} x={5} y={2} color="black" fontSize={12} />
+          {#each professionRecipes as recipe, recipeIndex}
+            {@const recipeY = 60 + recipeIndex * 80}
+            <Group x={0} y={recipeY}>
+              <!-- Recipe card background -->
+              <Rect x={0} y={0} width={400} height={70} fill="lightgrey" stroke="black" strokeWidth={1} />
+              
+              <!-- Recipe output icon -->
+              {#if typedIcons.materials[recipe.output]}
+                {@const outputIcon = loadedImages[typedIcons.materials[recipe.output]]}
+                {#if outputIcon}
+                  <Image
+                    image={outputIcon}
+                    x={10}
+                    y={15}
+                    width={40}
+                    height={40}
+                  />
+                {/if}
+              {/if}
+              
+              <!-- Recipe info -->
+              <Group x={60} y={5}>
+                <Text text={recipe.name} x={0} y={0} fontSize={12} fontWeight="bold" />
+                <Text text={`Output: ${recipe.output}`} x={0} y={15} fontSize={10} />
+                
+                <!-- Materials -->
+                <Group x={0} y={30}>
+                  <Text text="Materials:" x={0} y={0} fontSize={10} fontWeight="bold" />
+                  {#each recipe.requirements.materials as material, matIndex}
+                    {@const matX = matIndex * 80}
+                    <Group x={matX} y={10}>
+                      {#if typedIcons.materials[material.name]}
+                        {@const matIcon = loadedImages[typedIcons.materials[material.name]]}
+                        {#if matIcon}
+                          <Image
+                            image={matIcon}
+                            x={0}
+                            y={0}
+                            width={20}
+                            height={20}
+                          />
+                        {/if}
+                      {/if}
+                      <Text text={`${material.amount}x`} x={0} y={22} fontSize={8} textAnchor="middle" />
+                    </Group>
+                  {/each}
+                </Group>
+              </Group>
+              
+              <!-- Level indicator -->
+              <Rect x={350} y={5} width={40} height={20} fill="orange" />
+              <Text text={`Lv${recipe.requirements.profession.level}`} x={370} y={18} fontSize={10} textAnchor="middle" color="white" />
             </Group>
           {/each}
         </Group>
