@@ -1,20 +1,71 @@
-{
-    "recipes": [
-        {
-            "name": "Create a Birch Plank (Scrap)",
-            "requirements": {
-                "profession": {
-                    "name": "Carpentry",
-                    "level": 1
-                },
-                "materials": [
-                    {
-                        "name": "Wood Scrap",
-                        "amount": 5
-                    }
-                ],
-                "service": "Basic Sawmill"
-            }
+[
+    {
+        "name": "Create a Birch Plank (Scrap)",
+        "output": "Birch Plank",
+        "requirements": {
+            "profession": {
+                "name": "Carpentry",
+                "level": 1
+            },
+            "materials": [
+                {
+                    "name": "Wood Scrap",
+                    "amount": 5
+                }
+            ],
+            "service": "Basic Sawmill"
         }
-    ]
-}
+    },
+    {
+        "name": "Make a Basic Hatchet",
+        "output": "Basic Hatchet",
+        "requirements": {
+            "profession": {
+                "name": "Crafting",
+                "level": 1
+            },
+            "materials": [
+                {
+                    "name": "Stone",
+                    "amount": 2
+                },
+                {
+                    "name": "Wooden Stick",
+                    "amount": 1
+                }
+            ]
+        }
+    },
+    {
+        "name": "Spin Flax into Twine",
+        "output": "Twine",
+        "requirements": {
+            "profession": {
+                "name": "Crafting",
+                "level": 1
+            },
+            "materials": [
+                {
+                    "name": "Flax",
+                    "amount": 2
+                }
+            ]
+        }
+    },
+    {
+        "name": "Weave a Basic Fishing Net",
+        "output": "Basic Fishing Net",
+        "requirements": {
+            "profession": {
+                "name": "Crafting",
+                "level": 2
+            },
+            "materials": [
+                {
+                    "name": "Twine",
+                    "amount": 1
+                }
+            ]
+        }
+    }
+]
