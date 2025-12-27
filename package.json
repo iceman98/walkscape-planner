@@ -2,6 +2,7 @@
 	"name": "walkscape-planner",
 	"private": true,
 	"version": "0.0.1",
+	"homepage": "https://iceman98.github.io/walkscape-planner",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
